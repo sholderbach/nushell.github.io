@@ -1,0 +1,155 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Nushell Blog",
+    "home_page_url": "https://www.nushell.sh/blog",
+    "feed_url": "https://www.nushell.sh/feed.json",
+    "items": [
+        {
+            "id": "https://www.nushell.sh/blog/2022-03-22-nushell_0_60.html",
+            "url": "https://www.nushell.sh/blog/2022-03-22-nushell_0_60.html",
+            "title": "Nushell 0.60",
+            "summary": "Before we begin, as the Russian invasion of Ukraine still continues to threaten lives, here are ways you can help.\nNushell 0.60\nNushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.\nToday, we're releasing a beta release of 0.60 of Nu. This is an enormous release, with lots of changes across all aspects of Nushell.",
+            "image": "https://www.nushell.sh/../assets/images/0_60_completions.gif",
+            "date_modified": "2022-03-22T00:00:00.000Z"
+        },
+        {
+            "id": "https://www.nushell.sh/blog/2022-03-01-nushell_0_59.html",
+            "url": "https://www.nushell.sh/blog/2022-03-01-nushell_0_59.html",
+            "title": "Nushell 0.59 (aka 0.60 beta)",
+            "summary": "Nushell 0.59 (aka 0.60 beta)\nNushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.\nToday, we're releasing a beta release of 0.60 of Nu. This is to get early feedback on 0.60 before it's full release in three weeks.",
+            "date_modified": "2022-03-01T00:00:00.000Z"
+        },
+        {
+            "id": "https://www.nushell.sh/blog/2022-02-08-nushell_0_44.html",
+            "url": "https://www.nushell.sh/blog/2022-02-08-nushell_0_44.html",
+            "title": "Nushell 0.44",
+            "summary": "Nushell 0.44 - the calm before the storm\nNushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.\nToday, we're releasing 0.44 of Nu. This is the last release before engine-q becomes the new engine.",
+            "date_modified": "2022-02-08T00:00:00.000Z"
+        },
+        {
+            "id": "https://www.nushell.sh/blog/2022-01-18-nushell_0_43.html",
+            "url": "https://www.nushell.sh/blog/2022-01-18-nushell_0_43.html",
+            "title": "Nushell 0.43",
+            "summary": "Nushell 0.43\nNushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.\nToday, we're releasing 0.43 of Nu. This release is a bugfix release of 0.42.",
+            "date_modified": "2022-01-18T00:00:00.000Z"
+        },
+        {
+            "id": "https://www.nushell.sh/blog/2021-12-28-nushell_0_42.html",
+            "url": "https://www.nushell.sh/blog/2021-12-28-nushell_0_42.html",
+            "title": "Nushell 0.42",
+            "summary": "Nushell 0.42\nNushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.\nToday, we're releasing 0.42 of Nu. This release is a bugfix release of 0.41.",
+            "date_modified": "2021-12-28T00:00:00.000Z"
+        },
+        {
+            "id": "https://www.nushell.sh/blog/2021-12-07-nushell_0_41.html",
+            "url": "https://www.nushell.sh/blog/2021-12-07-nushell_0_41.html",
+            "title": "Nushell 0.41",
+            "summary": "Nushell 0.41\nNushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.\nToday, we're releasing 0.41 of Nu. This release is a bugfix release of 0.41.",
+            "date_modified": "2021-12-07T00:00:00.000Z"
+        },
+        {
+            "id": "https://www.nushell.sh/blog/2021-11-16-nushell_0_40.html",
+            "url": "https://www.nushell.sh/blog/2021-11-16-nushell_0_40.html",
+            "title": "Nushell 0.40",
+            "summary": "Nushell 0.40\nNushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.\nToday, we're releasing 0.40 of Nu. This release is includes better table imports and much smaller release size.",
+            "date_modified": "2021-11-16T00:00:00.000Z"
+        },
+        {
+            "id": "https://www.nushell.sh/blog/2021-10-26-nushell_0_39.html",
+            "url": "https://www.nushell.sh/blog/2021-10-26-nushell_0_39.html",
+            "title": "Nushell 0.39",
+            "summary": "Nushell 0.39\nNushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.\nToday, we're releasing 0.39 of Nu. This release is a bugfix release of 0.38.",
+            "date_modified": "2021-10-26T00:00:00.000Z"
+        },
+        {
+            "id": "https://www.nushell.sh/blog/2021-10-05-nushell_0_38.html",
+            "url": "https://www.nushell.sh/blog/2021-10-05-nushell_0_38.html",
+            "title": "Nushell 0.38",
+            "summary": "Nushell 0.38\nNushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.\nToday, we're releasing 0.38 of Nu. This release includes polish to the user interface, improvements to how columns are passed, lots of bug fixes, and updates on the upcoming engine.",
+            "date_modified": "2021-10-05T00:00:00.000Z"
+        },
+        {
+            "id": "https://www.nushell.sh/blog/2021-09-14-nushell_0_37.html",
+            "url": "https://www.nushell.sh/blog/2021-09-14-nushell_0_37.html",
+            "title": "Nushell 0.37",
+            "summary": "Nushell 0.37\nNushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.\nToday, we're releasing 0.37 of Nu. This release adds a new find function, improvements to the current engine, and updates on the upcoming engine.",
+            "image": "https://www.nushell.sh/../assets/images/0_37_find.png",
+            "date_modified": "2021-09-14T00:00:00.000Z"
+        },
+        {
+            "id": "https://www.nushell.sh/blog/2021-08-24-nushell_0_36.html",
+            "url": "https://www.nushell.sh/blog/2021-08-24-nushell_0_36.html",
+            "title": "Nushell 0.36",
+            "summary": "Nushell 0.36\nNushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.\nToday, we're releasing 0.36 of Nu. This release fixes some long-standing issues with history, improves the help system, improves dataframes, and much more.",
+            "image": "https://www.nushell.sh/../assets/images/0_36_tutor.png",
+            "date_modified": "2021-08-24T00:00:00.000Z"
+        },
+        {
+            "id": "https://www.nushell.sh/blog/2021-08-23-two-years-of-nushell.html",
+            "url": "https://www.nushell.sh/blog/2021-08-23-two-years-of-nushell.html",
+            "title": "Two years of Nushell",
+            "summary": "Happy birthday, Nushell!",
+            "image": "https://www.nushell.sh/../assets/images/two_year_cake.png",
+            "date_modified": "2021-08-23T00:00:00.000Z"
+        },
+        {
+            "id": "https://www.nushell.sh/blog/2021-08-03-nushell_0_35.html",
+            "url": "https://www.nushell.sh/blog/2021-08-03-nushell_0_35.html",
+            "title": "Nushell 0.35",
+            "summary": "Nushell 0.35\nNushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.\nToday, we're releasing 0.35 of Nu. This release shows off a lot of dataframe progress and lots of command polish.",
+            "date_modified": "2021-08-03T00:00:00.000Z"
+        },
+        {
+            "id": "https://www.nushell.sh/blog/2021-07-13-nushell_0_34.html",
+            "url": "https://www.nushell.sh/blog/2021-07-13-nushell_0_34.html",
+            "title": "Nushell 0.34",
+            "summary": "Nushell 0.34\nNushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.\nToday, we're releasing 0.34 of Nu. This release is the first to support dataframes and also includes a set of usability improvements.",
+            "date_modified": "2021-07-13T00:00:00.000Z"
+        },
+        {
+            "id": "https://www.nushell.sh/blog/2021-06-22-nushell_0_33.html",
+            "url": "https://www.nushell.sh/blog/2021-06-22-nushell_0_33.html",
+            "title": "Nushell 0.33",
+            "summary": "Nushell 0.33\nNushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.\nToday, we're releasing 0.33 of Nu. This release includes improved completions, support for pipeline variables, syntax theming and more.",
+            "image": "https://www.nushell.sh/../assets/images/0_32_themes.png",
+            "date_modified": "2021-06-22T00:00:00.000Z"
+        },
+        {
+            "id": "https://www.nushell.sh/blog/2021-06-01-nushell_0_32.html",
+            "url": "https://www.nushell.sh/blog/2021-06-01-nushell_0_32.html",
+            "title": "Nushell 0.32",
+            "summary": "Nushell 0.32\nNushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.\nToday, we're releasing 0.32 of Nu. This release contains a large amount of usability improvements.",
+            "image": "https://user-images.githubusercontent.com/343840/119736601-93ff4b00-be43-11eb-9f17-0d9303e89cd6.png",
+            "date_modified": "2021-06-01T00:00:00.000Z"
+        },
+        {
+            "id": "https://www.nushell.sh/blog/2021-05-11-nushell_0_31.html",
+            "url": "https://www.nushell.sh/blog/2021-05-11-nushell_0_31.html",
+            "title": "Nushell 0.31",
+            "summary": "Nushell 0.31\nNushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.\nToday, we're releasing 0.31 of Nu. This release includes continued polish of the engine and commands.",
+            "date_modified": "2021-05-11T00:00:00.000Z"
+        },
+        {
+            "id": "https://www.nushell.sh/blog/2021-04-20-nushell_0_30.html",
+            "url": "https://www.nushell.sh/blog/2021-04-20-nushell_0_30.html",
+            "title": "Nushell 0.30",
+            "summary": "Nushell 0.30\nNushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.\nToday, we're releasing 0.30 of Nu. This release adds big improvements to performance and simplicity of the engine.",
+            "image": "https://www.nushell.sh/../assets/images/0_30_0_speed.png",
+            "date_modified": "2021-04-20T00:00:00.000Z"
+        },
+        {
+            "id": "https://www.nushell.sh/blog/2021-03-30-nushell_0_29.html",
+            "url": "https://www.nushell.sh/blog/2021-03-30-nushell_0_29.html",
+            "title": "Nushell 0.29",
+            "summary": "Nushell 0.29\nNushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.\nToday, we're releasing 0.29 of Nu. This release adds more polish for paths, streaming, and more.",
+            "date_modified": "2021-03-30T00:00:00.000Z"
+        },
+        {
+            "id": "https://www.nushell.sh/blog/2021-03-09-nushell_0_28.html",
+            "url": "https://www.nushell.sh/blog/2021-03-09-nushell_0_28.html",
+            "title": "Nushell 0.28",
+            "summary": "Nushell 0.28\nNushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.\nToday, we're releasing 0.28 of Nu. In this release we've added new commands for working with tables, paths, and lots of general feature improvements.",
+            "date_modified": "2021-03-09T00:00:00.000Z"
+        }
+    ]
+}
