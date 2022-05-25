@@ -4,10 +4,39 @@
         <title>Nushell Blog</title>
         <link>https://www.nushell.sh/blog</link>
         <description></description>
-        <lastBuildDate>Sun, 10 Apr 2022 17:39:26 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 25 May 2022 09:35:06 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
         <atom:link href="https://www.nushell.sh/feed.atom" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Nushell 0.63]]></title>
+            <link>https://www.nushell.sh/blog/2022-05-24-nushell_0_63.html</link>
+            <guid>https://www.nushell.sh/blog/2022-05-24-nushell_0_63.html</guid>
+            <pubDate>Tue, 24 May 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Nushell 0.63
+Nushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.
+Today, we're releasing version 0.63 of Nu. This release is the first to include the 'overlays' feature, hooks, lazy dataframes, and more.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Nushell 0.62]]></title>
+            <link>https://www.nushell.sh/blog/2022-05-03-nushell_0_62.html</link>
+            <guid>https://www.nushell.sh/blog/2022-05-03-nushell_0_62.html</guid>
+            <pubDate>Tue, 03 May 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Nushell 0.62
+Nushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.
+Today, we're releasing version 0.62 of Nu. This release deeper integration with SQLite, new completion logic, and much more.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Nushell 0.61]]></title>
+            <link>https://www.nushell.sh/blog/2022-04-12-nushell_0_61.html</link>
+            <guid>https://www.nushell.sh/blog/2022-04-12-nushell_0_61.html</guid>
+            <pubDate>Tue, 12 Apr 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Nushell 0.61
+Nushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.
+Today, we're releasing version 0.61 of Nu. This release includes UI improvements, many bugfixes, improved glob support, and more.]]></description>
+            <enclosure url="https://www.nushell.sh/../assets/images/0_61_help_menu.png">
+            </enclosure>
+        </item>
         <item>
             <title><![CDATA[Nushell 0.60]]></title>
             <link>https://www.nushell.sh/blog/2022-03-22-nushell_0_60.html</link>
@@ -171,35 +200,6 @@ Today, we're releasing 0.32 of Nu. This release contains a large amount of usabi
             <description><![CDATA[Nushell 0.31
 Nushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.
 Today, we're releasing 0.31 of Nu. This release includes continued polish of the engine and commands.]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Nushell 0.30]]></title>
-            <link>https://www.nushell.sh/blog/2021-04-20-nushell_0_30.html</link>
-            <guid>https://www.nushell.sh/blog/2021-04-20-nushell_0_30.html</guid>
-            <pubDate>Tue, 20 Apr 2021 00:00:00 GMT</pubDate>
-            <description><![CDATA[Nushell 0.30
-Nushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.
-Today, we're releasing 0.30 of Nu. This release adds big improvements to performance and simplicity of the engine.]]></description>
-            <enclosure url="https://www.nushell.sh/../assets/images/0_30_0_speed.png">
-            </enclosure>
-        </item>
-        <item>
-            <title><![CDATA[Nushell 0.29]]></title>
-            <link>https://www.nushell.sh/blog/2021-03-30-nushell_0_29.html</link>
-            <guid>https://www.nushell.sh/blog/2021-03-30-nushell_0_29.html</guid>
-            <pubDate>Tue, 30 Mar 2021 00:00:00 GMT</pubDate>
-            <description><![CDATA[Nushell 0.29
-Nushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.
-Today, we're releasing 0.29 of Nu. This release adds more polish for paths, streaming, and more.]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Nushell 0.28]]></title>
-            <link>https://www.nushell.sh/blog/2021-03-09-nushell_0_28.html</link>
-            <guid>https://www.nushell.sh/blog/2021-03-09-nushell_0_28.html</guid>
-            <pubDate>Tue, 09 Mar 2021 00:00:00 GMT</pubDate>
-            <description><![CDATA[Nushell 0.28
-Nushell, or Nu for short, is a new shell that takes a modern, structured approach to your commandline. It works seamlessly with the data from your filesystem, operating system, and a growing number of file formats to make it easy to build powerful commandline pipelines.
-Today, we're releasing 0.28 of Nu. In this release we've added new commands for working with tables, paths, and lots of general feature improvements.]]></description>
         </item>
     </channel>
 </rss>
