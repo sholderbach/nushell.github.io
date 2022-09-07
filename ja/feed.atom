@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja">
+  <id>https://www.nushell.sh/ja/</id>
+  <title>Nushell</title>
+  <subtitle>新しいタイプのシェル</subtitle>
+  <updated>2022-09-07T09:35:23.088Z</updated>
+  <generator>vuepress-plugin-feed2</generator>
+  <link rel="self" href="https://www.nushell.sh/feed.atom"/>
+  <link rel="alternate" href="https://www.nushell.sh/ja/"/>
+</feed>

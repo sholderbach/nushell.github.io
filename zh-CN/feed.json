@@ -1,0 +1,8 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Nushell",
+  "home_page_url": "https://www.nushell.sh/zh-CN/",
+  "feed_url": "https://www.nushell.sh/feed.json",
+  "description": "一种新型的Shell",
+  "items": []
+}
