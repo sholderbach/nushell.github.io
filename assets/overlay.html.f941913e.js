@@ -1,0 +1,5 @@
+import{_ as r,z as s,A as n,X as e,C as a,D as o,a6 as i}from"./framework.3d018c9f.js";const c={},d={id:"frontmatter-title-for-core",tabindex:"-1"},l=e("a",{class:"header-anchor",href:"#frontmatter-title-for-core","aria-hidden":"true"},"#",-1),h={class:"command-title"},m=i(`<h2 id="signature" tabindex="-1"><a class="header-anchor" href="#signature" aria-hidden="true">#</a> Signature</h2><p><code>&gt; overlay </code></p><h2 id="notes" tabindex="-1"><a class="header-anchor" href="#notes" aria-hidden="true">#</a> Notes</h2><div class="language-text" data-ext="text"><pre class="language-text"><code>This command is a parser keyword. For details, check:
+  https://www.nushell.sh/book/thinking_in_nu.html
+
+  You must use one of the following subcommands. Using this command as-is will only produce this help message.
+</code></pre></div>`,4);function u(t,_){return s(),n("div",null,[e("h1",d,[l,a(),e("code",null,o(t.$frontmatter.title),1),a(" for core")]),e("div",h,o(t.$frontmatter.core),1),m])}const g=r(c,[["render",u],["__file","overlay.html.vue"]]);export{g as default};

@@ -1,0 +1,9 @@
+import{_ as s,z as r,A as o,X as e,C as a,D as n,a6 as d}from"./framework.3d018c9f.js";const i={},c={id:"frontmatter-title-for-strings",tabindex:"-1"},l=e("a",{class:"header-anchor",href:"#frontmatter-title-for-strings","aria-hidden":"true"},"#",-1),h={class:"command-title"},p=d(`<h2 id="signature" tabindex="-1"><a class="header-anchor" href="#signature" aria-hidden="true">#</a> Signature</h2><p><code>&gt; encode (encoding)</code></p><h2 id="parameters" tabindex="-1"><a class="header-anchor" href="#parameters" aria-hidden="true">#</a> Parameters</h2><ul><li><code>encoding</code>: the text encoding to use</li></ul><h2 id="notes" tabindex="-1"><a class="header-anchor" href="#notes" aria-hidden="true">#</a> Notes</h2><div class="language-text" data-ext="text"><pre class="language-text"><code>Multiple encodings are supported, here is an example of a few:
+big5, euc-jp, euc-kr, gbk, iso-8859-1, cp1252, latin5
+
+Note that since the Encoding Standard doesn&#39;t specify encoders for utf-16le and utf-16be, these are not yet supported.
+
+For a more complete list of encodings please refer to the encoding_rs
+documentation link at https://docs.rs/encoding_rs/0.8.28/encoding_rs/#statics
+</code></pre></div><h2 id="examples" tabindex="-1"><a class="header-anchor" href="#examples" aria-hidden="true">#</a> Examples</h2><p>Encode an UTF-8 string into Shift-JIS</p><div class="language-bash" data-ext="sh"><pre class="language-bash"><code><span class="token operator">&gt;</span> <span class="token string">&quot;負けると知って戦うのが、遥かに美しいのだ&quot;</span> <span class="token operator">|</span> encode shift-jis
+</code></pre></div>`,9);function g(t,u){return r(),o("div",null,[e("h1",c,[l,a(),e("code",null,n(t.$frontmatter.title),1),a(" for strings")]),e("div",h,n(t.$frontmatter.strings),1),p])}const m=s(i,[["render",g],["__file","encode.html.vue"]]);export{m as default};

@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-a820cfec","path":"/book/advanced.html","title":"(Not So) Advanced","lang":"English","frontmatter":{},"excerpt":"","headers":[],"filePathRelative":"book/advanced.md","git":{"createdTime":1658864458000,"updatedTime":1658864458000,"contributors":[{"name":"Jakub \u017D\xE1dn\xEDk","email":"kubouch@gmail.com","commits":1}]}}');export{e as data};

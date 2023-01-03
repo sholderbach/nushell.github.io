@@ -1,0 +1,3 @@
+import{_ as e,z as t,A as a,a6 as c}from"./framework.3d018c9f.js";const s={},d=c(`<h1 id="エスケープ" tabindex="-1"><a class="header-anchor" href="#エスケープ" aria-hidden="true">#</a> エスケープ</h1><p>Nu は様々な OS で使用できる一連のコマンドを提供します。このような一貫性があると便利です。ただし、ときには Nu コマンドと同じ名前のコマンドを実行したいときがあります。例えば、ローカルの<code>ls</code>や<code>date</code>コマンドなどです。このような場合にはキャレット(^)コマンドを使用します。</p><p>Nu のコマンド:</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; ls
+</code></pre></div><p>ローカルコマンドへのエスケープ:</p><div class="language-text" data-ext="text"><pre class="language-text"><code>&gt; ^ls
+</code></pre></div>`,6),n=[d];function o(l,r){return t(),a("div",null,n)}const p=e(s,[["render",o],["__file","escaping.html.vue"]]);export{p as default};
