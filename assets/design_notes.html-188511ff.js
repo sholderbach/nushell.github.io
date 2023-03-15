@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-c43f2728","path":"/book/design_notes.html","title":"Design Notes","lang":"English","frontmatter":{},"headers":[],"filePathRelative":"book/design_notes.md","git":{"createdTime":1673378025000,"updatedTime":1673378025000,"contributors":[{"name":"Jakub Žádník","email":"kubouch@gmail.com","commits":1}]}}');export{e as data};

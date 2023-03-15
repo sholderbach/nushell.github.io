@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-7a2c8aa0","path":"/zh-CN/book/creating_errors.html","title":"创建你自己的错误","lang":"zh-CN","frontmatter":{},"headers":[],"filePathRelative":"zh-CN/book/creating_errors.md","git":{"createdTime":1649848693000,"updatedTime":1649848693000,"contributors":[{"name":"Justin Ma","email":"hustcer@outlook.com","commits":1}]}}');export{t as data};

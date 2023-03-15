@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-b42ff812","path":"/es/book/plugins.html","title":"Complementos (plugins)","lang":"es","frontmatter":{},"excerpt":"","headers":[],"filePathRelative":"es/book/plugins.md","git":{"createdTime":1605383573000,"updatedTime":1605383573000,"contributors":[{"name":"Ibraheem Ahmed","email":"ibrah1440@gmail.com","commits":1}]}}');export{e as data};

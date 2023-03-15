@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="English">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.60">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <meta name="theme-color" content="#3eaf7c"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/icon.png"><title>Command Reference | Nushell</title><meta name="description" content="A new type of shell.">
+    <link rel="preload" href="/assets/style-9c9951ef.css" as="style"><link rel="stylesheet" href="/assets/style-9c9951ef.css">
+    <link rel="modulepreload" href="/assets/app-c9a81c0f.js"><link rel="modulepreload" href="/assets/framework-344bb0e4.js"><link rel="modulepreload" href="/assets/index.html-02368305.js"><link rel="modulepreload" href="/assets/index.html-7933780a.js">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/" class=""><!----><span class="site-name">Nushell</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><nav class="navbar-items can-hide"><!--[--><div class="navbar-item"><a href="/book/" class="" aria-label="Book"><!--[--><!--]--> Book <!--[--><!--]--></a></div><div class="navbar-item"><a aria-current="page" href="/commands/" class="router-link-active router-link-exact-active router-link-active" aria-label="Commands"><!--[--><!--]--> Commands <!--[--><!--]--></a></div><div class="navbar-item"><a href="/cookbook/" class="" aria-label="Cookbook"><!--[--><!--]--> Cookbook <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/" class="" aria-label="Changelog"><!--[--><!--]--> Changelog <!--[--><!--]--></a></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="Select language"><span class="title">Languages</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="Select language"><span class="title">Languages</span><span class="right arrow"></span></button><ul style="display:none;" class="navbar-dropdown"><!--[--><li class="navbar-dropdown-item"><a aria-current="page" href="/commands/" class="router-link-active router-link-exact-active router-link-active" aria-label="English"><!--[--><!--]--> English <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/zh-CN/" class="" aria-label="中文"><!--[--><!--]--> 中文 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/de/" class="" aria-label="Deutsch"><!--[--><!--]--> Deutsch <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/es/" class="" aria-label="Español"><!--[--><!--]--> Español <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/ja/" class="" aria-label="日本語"><!--[--><!--]--> 日本語 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/pt-BR/" class="" aria-label="Português do Brasil"><!--[--><!--]--> Português do Brasil <!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-item"><a class="external-link" href="https://github.com/nushell/nushell" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><button class="toggle-color-mode-button" title="toggle color mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><div id="docsearch-container"></div></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><nav class="navbar-items"><!--[--><div class="navbar-item"><a href="/book/" class="" aria-label="Book"><!--[--><!--]--> Book <!--[--><!--]--></a></div><div class="navbar-item"><a aria-current="page" href="/commands/" class="router-link-active router-link-exact-active router-link-active" aria-label="Commands"><!--[--><!--]--> Commands <!--[--><!--]--></a></div><div class="navbar-item"><a href="/cookbook/" class="" aria-label="Cookbook"><!--[--><!--]--> Cookbook <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/" class="" aria-label="Changelog"><!--[--><!--]--> Changelog <!--[--><!--]--></a></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="Select language"><span class="title">Languages</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="Select language"><span class="title">Languages</span><span class="right arrow"></span></button><ul style="display:none;" class="navbar-dropdown"><!--[--><li class="navbar-dropdown-item"><a aria-current="page" href="/commands/" class="router-link-active router-link-exact-active router-link-active" aria-label="English"><!--[--><!--]--> English <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/zh-CN/" class="" aria-label="中文"><!--[--><!--]--> 中文 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/de/" class="" aria-label="Deutsch"><!--[--><!--]--> Deutsch <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/es/" class="" aria-label="Español"><!--[--><!--]--> Español <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/ja/" class="" aria-label="日本語"><!--[--><!--]--> 日本語 <!--[--><!--]--></a></li><li class="navbar-dropdown-item"><a href="/pt-BR/" class="" aria-label="Português do Brasil"><!--[--><!--]--> Português do Brasil <!--[--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-item"><a class="external-link" href="https://github.com/nushell/nushell" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading">Categories <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/commands/categories/bits.html" class="sidebar-item" aria-label="Bits"><!--[--><!--]--> Bits <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/bytes.html" class="sidebar-item" aria-label="Bytes"><!--[--><!--]--> Bytes <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/conversions.html" class="sidebar-item" aria-label="Conversions"><!--[--><!--]--> Conversions <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/core.html" class="sidebar-item" aria-label="Core"><!--[--><!--]--> Core <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/database.html" class="sidebar-item" aria-label="Database"><!--[--><!--]--> Database <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/dataframe.html" class="sidebar-item" aria-label="Dataframe"><!--[--><!--]--> Dataframe <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/dataframe_or_lazyframe.html" class="sidebar-item" aria-label="Dataframe Or Lazyframe"><!--[--><!--]--> Dataframe Or Lazyframe <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/date.html" class="sidebar-item" aria-label="Date"><!--[--><!--]--> Date <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/debug.html" class="sidebar-item" aria-label="Debug"><!--[--><!--]--> Debug <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/default.html" class="sidebar-item" aria-label="Default"><!--[--><!--]--> Default <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/deprecated.html" class="sidebar-item" aria-label="Deprecated"><!--[--><!--]--> Deprecated <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/env.html" class="sidebar-item" aria-label="Env"><!--[--><!--]--> Env <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/experimental.html" class="sidebar-item" aria-label="Experimental"><!--[--><!--]--> Experimental <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/expression.html" class="sidebar-item" aria-label="Expression"><!--[--><!--]--> Expression <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/filesystem.html" class="sidebar-item" aria-label="Filesystem"><!--[--><!--]--> Filesystem <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/filters.html" class="sidebar-item" aria-label="Filters"><!--[--><!--]--> Filters <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/formats.html" class="sidebar-item" aria-label="Formats"><!--[--><!--]--> Formats <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/generators.html" class="sidebar-item" aria-label="Generators"><!--[--><!--]--> Generators <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/hash.html" class="sidebar-item" aria-label="Hash"><!--[--><!--]--> Hash <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/lazyframe.html" class="sidebar-item" aria-label="Lazyframe"><!--[--><!--]--> Lazyframe <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/math.html" class="sidebar-item" aria-label="Math"><!--[--><!--]--> Math <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/misc.html" class="sidebar-item" aria-label="Misc"><!--[--><!--]--> Misc <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/network.html" class="sidebar-item" aria-label="Network"><!--[--><!--]--> Network <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/platform.html" class="sidebar-item" aria-label="Platform"><!--[--><!--]--> Platform <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/prompt.html" class="sidebar-item" aria-label="Prompt"><!--[--><!--]--> Prompt <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/random.html" class="sidebar-item" aria-label="Random"><!--[--><!--]--> Random <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/shells.html" class="sidebar-item" aria-label="Shells"><!--[--><!--]--> Shells <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/strings.html" class="sidebar-item" aria-label="Strings"><!--[--><!--]--> Strings <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/system.html" class="sidebar-item" aria-label="System"><!--[--><!--]--> System <!--[--><!--]--></a><!----></li><li><a href="/commands/categories/viewers.html" class="sidebar-item" aria-label="Viewers"><!--[--><!--]--> Viewers <!--[--><!--]--></a><!----></li><!--]--></ul></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><!--]--><div><h1 id="command-reference" tabindex="-1"><a class="header-anchor" href="#command-reference" aria-hidden="true">#</a> Command Reference</h1><p>If you&#39;re new to Nushell, <a href="/book/quick_tour.html" class="">the quick tour</a> can show you the most important commands. You don&#39;t need to know them all!</p><p>To see all commands from inside Nushell, run <a href="/commands/docs/help.html" class=""><code>help commands</code></a>.</p><table><tr><th>Command</th><th>Categories</th><th>Description</th></tr><!--[--><tr><td><a href="/commands/docs/alias.html">alias</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Alias a command (with optional flags) to a new name
+</td></tr><tr><td><a href="/commands/docs/all.html">all</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Test if every element of the input fulfills a predicate expression.
+</td></tr><tr><td><a href="/commands/docs/ansi.html">ansi</a></td><td style="white-space:pre-wrap;">platform
+</td><td style="white-space:pre-wrap;">Output ANSI codes to change color.
+</td></tr><tr><td><a href="/commands/docs/ansi_gradient.html">ansi gradient</a></td><td style="white-space:pre-wrap;">platform
+</td><td style="white-space:pre-wrap;">Add a color gradient (using ANSI color codes) to the given string
+</td></tr><tr><td><a href="/commands/docs/ansi_link.html">ansi link</a></td><td style="white-space:pre-wrap;">platform
+</td><td style="white-space:pre-wrap;">Add a link (using OSC 8 escape sequence) to the given string
+</td></tr><tr><td><a href="/commands/docs/ansi_strip.html">ansi strip</a></td><td style="white-space:pre-wrap;">platform
+</td><td style="white-space:pre-wrap;">Strip ANSI escape sequences from a string
+</td></tr><tr><td><a href="/commands/docs/any.html">any</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Tests if any element of the input fulfills a predicate expression.
+</td></tr><tr><td><a href="/commands/docs/append.html">append</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Append any number of rows to a table.
+</td></tr><tr><td><a href="/commands/docs/ast.html">ast</a></td><td style="white-space:pre-wrap;">debug
+</td><td style="white-space:pre-wrap;">Print the abstract syntax tree (ast) for a pipeline.
+</td></tr><tr><td><a href="/commands/docs/bits.html">bits</a></td><td style="white-space:pre-wrap;">bits
+</td><td style="white-space:pre-wrap;">Various commands for working with bits
+</td></tr><tr><td><a href="/commands/docs/bits_and.html">bits and</a></td><td style="white-space:pre-wrap;">bits
+</td><td style="white-space:pre-wrap;">Performs bitwise and for integers
+</td></tr><tr><td><a href="/commands/docs/bits_not.html">bits not</a></td><td style="white-space:pre-wrap;">bits
+</td><td style="white-space:pre-wrap;">Performs logical negation on each bit
+</td></tr><tr><td><a href="/commands/docs/bits_or.html">bits or</a></td><td style="white-space:pre-wrap;">bits
+</td><td style="white-space:pre-wrap;">Performs bitwise or for integers
+</td></tr><tr><td><a href="/commands/docs/bits_rol.html">bits rol</a></td><td style="white-space:pre-wrap;">bits
+</td><td style="white-space:pre-wrap;">Bitwise rotate left for integers
+</td></tr><tr><td><a href="/commands/docs/bits_ror.html">bits ror</a></td><td style="white-space:pre-wrap;">bits
+</td><td style="white-space:pre-wrap;">Bitwise rotate right for integers
+</td></tr><tr><td><a href="/commands/docs/bits_shl.html">bits shl</a></td><td style="white-space:pre-wrap;">bits
+</td><td style="white-space:pre-wrap;">Bitwise shift left for integers
+</td></tr><tr><td><a href="/commands/docs/bits_shr.html">bits shr</a></td><td style="white-space:pre-wrap;">bits
+</td><td style="white-space:pre-wrap;">Bitwise shift right for integers
+</td></tr><tr><td><a href="/commands/docs/bits_xor.html">bits xor</a></td><td style="white-space:pre-wrap;">bits
+</td><td style="white-space:pre-wrap;">Performs bitwise xor for integers
+</td></tr><tr><td><a href="/commands/docs/break.html">break</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Break a loop
+</td></tr><tr><td><a href="/commands/docs/bytes.html">bytes</a></td><td style="white-space:pre-wrap;">bytes
+</td><td style="white-space:pre-wrap;">Various commands for working with byte data
+</td></tr><tr><td><a href="/commands/docs/bytes_add.html">bytes add</a></td><td style="white-space:pre-wrap;">bytes
+</td><td style="white-space:pre-wrap;">Add specified bytes to the input
+</td></tr><tr><td><a href="/commands/docs/bytes_at.html">bytes at</a></td><td style="white-space:pre-wrap;">bytes
+</td><td style="white-space:pre-wrap;">Get bytes defined by a range. Note that the start is included but the end is excluded, and that the first byte is index 0.
+</td></tr><tr><td><a href="/commands/docs/bytes_build.html">bytes build</a></td><td style="white-space:pre-wrap;">bytes
+</td><td style="white-space:pre-wrap;">Create bytes from the arguments.
+</td></tr><tr><td><a href="/commands/docs/bytes_collect.html">bytes collect</a></td><td style="white-space:pre-wrap;">bytes
+</td><td style="white-space:pre-wrap;">Concatenate multiple binary into a single binary, with an optional separator between each
+</td></tr><tr><td><a href="/commands/docs/bytes_ends-with.html">bytes ends-with</a></td><td style="white-space:pre-wrap;">bytes
+</td><td style="white-space:pre-wrap;">Check if bytes ends with a pattern
+</td></tr><tr><td><a href="/commands/docs/bytes_index-of.html">bytes index-of</a></td><td style="white-space:pre-wrap;">bytes
+</td><td style="white-space:pre-wrap;">Returns start index of first occurrence of pattern in bytes, or -1 if no match
+</td></tr><tr><td><a href="/commands/docs/bytes_length.html">bytes length</a></td><td style="white-space:pre-wrap;">bytes
+</td><td style="white-space:pre-wrap;">Output the length of any bytes in the pipeline
+</td></tr><tr><td><a href="/commands/docs/bytes_remove.html">bytes remove</a></td><td style="white-space:pre-wrap;">bytes
+</td><td style="white-space:pre-wrap;">Remove bytes
+</td></tr><tr><td><a href="/commands/docs/bytes_replace.html">bytes replace</a></td><td style="white-space:pre-wrap;">bytes
+</td><td style="white-space:pre-wrap;">Find and replace binary
+</td></tr><tr><td><a href="/commands/docs/bytes_reverse.html">bytes reverse</a></td><td style="white-space:pre-wrap;">bytes
+</td><td style="white-space:pre-wrap;">Reverse the bytes in the pipeline
+</td></tr><tr><td><a href="/commands/docs/bytes_starts-with.html">bytes starts-with</a></td><td style="white-space:pre-wrap;">bytes
+</td><td style="white-space:pre-wrap;">Check if bytes starts with a pattern
+</td></tr><tr><td><a href="/commands/docs/cal.html">cal</a></td><td style="white-space:pre-wrap;">generators
+</td><td style="white-space:pre-wrap;">Display a calendar.
+</td></tr><tr><td><a href="/commands/docs/cd.html">cd</a></td><td style="white-space:pre-wrap;">filesystem
+</td><td style="white-space:pre-wrap;">Change directory.
+</td></tr><tr><td><a href="/commands/docs/char.html">char</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Output special characters (e.g., &#39;newline&#39;).
+</td></tr><tr><td><a href="/commands/docs/clear.html">clear</a></td><td style="white-space:pre-wrap;">platform
+</td><td style="white-space:pre-wrap;">Clear the terminal.
+</td></tr><tr><td><a href="/commands/docs/collect.html">collect</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Collect the stream and pass it to a block.
+</td></tr><tr><td><a href="/commands/docs/columns.html">columns</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Given a record or table, produce a list of its columns&#39; names.
+</td></tr><tr><td><a href="/commands/docs/commandline.html">commandline</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">View or modify the current command line input buffer
+</td></tr><tr><td><a href="/commands/docs/compact.html">compact</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Creates a table with non-empty rows.
+</td></tr><tr><td><a href="/commands/docs/complete.html">complete</a></td><td style="white-space:pre-wrap;">system
+</td><td style="white-space:pre-wrap;">Capture the outputs and exit code from an external piped in command in a nushell table
+</td></tr><tr><td><a href="/commands/docs/config.html">config</a></td><td style="white-space:pre-wrap;">env
+</td><td style="white-space:pre-wrap;">Edit nushell configuration files
+</td></tr><tr><td><a href="/commands/docs/config_env.html">config env</a></td><td style="white-space:pre-wrap;">env
+</td><td style="white-space:pre-wrap;">Edit nu environment configurations
+</td></tr><tr><td><a href="/commands/docs/config_nu.html">config nu</a></td><td style="white-space:pre-wrap;">env
+</td><td style="white-space:pre-wrap;">Edit nu configurations
+</td></tr><tr><td><a href="/commands/docs/config_reset.html">config reset</a></td><td style="white-space:pre-wrap;">env
+</td><td style="white-space:pre-wrap;">Reset nushell environment configurations to default, and saves old config files in the config location as oldconfig.nu and oldenv.nu
+</td></tr><tr><td><a href="/commands/docs/const.html">const</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Create a parse-time constant.
+</td></tr><tr><td><a href="/commands/docs/continue.html">continue</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Continue a loop from the next iteration
+</td></tr><tr><td><a href="/commands/docs/cp.html">cp</a></td><td style="white-space:pre-wrap;">filesystem
+</td><td style="white-space:pre-wrap;">Copy files.
+</td></tr><tr><td><a href="/commands/docs/date.html">date</a></td><td style="white-space:pre-wrap;">date
+</td><td style="white-space:pre-wrap;">Date-related commands
+</td></tr><tr><td><a href="/commands/docs/date_format.html">date format</a></td><td style="white-space:pre-wrap;">date
+</td><td style="white-space:pre-wrap;">Format a given date using a format string.
+</td></tr><tr><td><a href="/commands/docs/date_humanize.html">date humanize</a></td><td style="white-space:pre-wrap;">date
+</td><td style="white-space:pre-wrap;">Print a &#39;humanized&#39; format for the date, relative to now.
+</td></tr><tr><td><a href="/commands/docs/date_list-timezone.html">date list-timezone</a></td><td style="white-space:pre-wrap;">date
+</td><td style="white-space:pre-wrap;">List supported time zones.
+</td></tr><tr><td><a href="/commands/docs/date_now.html">date now</a></td><td style="white-space:pre-wrap;">date
+</td><td style="white-space:pre-wrap;">Get the current date.
+</td></tr><tr><td><a href="/commands/docs/date_to-record.html">date to-record</a></td><td style="white-space:pre-wrap;">date
+</td><td style="white-space:pre-wrap;">Convert the date into a record.
+</td></tr><tr><td><a href="/commands/docs/date_to-table.html">date to-table</a></td><td style="white-space:pre-wrap;">date
+</td><td style="white-space:pre-wrap;">Convert the date into a structured table.
+</td></tr><tr><td><a href="/commands/docs/date_to-timezone.html">date to-timezone</a></td><td style="white-space:pre-wrap;">date
+</td><td style="white-space:pre-wrap;">Convert a date to a given time zone.
+</td></tr><tr><td><a href="/commands/docs/debug.html">debug</a></td><td style="white-space:pre-wrap;">debug
+</td><td style="white-space:pre-wrap;">Debug print the value(s) piped in.
+</td></tr><tr><td><a href="/commands/docs/decode.html">decode</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Decode bytes into a string.
+</td></tr><tr><td><a href="/commands/docs/decode_base64.html">decode base64</a></td><td style="white-space:pre-wrap;">hash
+</td><td style="white-space:pre-wrap;">Base64 decode a value
+</td></tr><tr><td><a href="/commands/docs/def.html">def</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Define a custom command
+</td></tr><tr><td><a href="/commands/docs/def-env.html">def-env</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Define a custom command, which participates in the caller environment
+</td></tr><tr><td><a href="/commands/docs/default.html">default</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Sets a default row&#39;s column if missing.
+</td></tr><tr><td><a href="/commands/docs/describe.html">describe</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Describe the type and structure of the value(s) piped in.
+</td></tr><tr><td><a href="/commands/docs/detect_columns.html">detect columns</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Attempt to automatically split text into multiple columns
+</td></tr><tr><td><a href="/commands/docs/dfr_agg.html">dfr agg</a></td><td style="white-space:pre-wrap;">lazyframe
+</td><td style="white-space:pre-wrap;">Performs a series of aggregations from a group-by
+</td></tr><tr><td><a href="/commands/docs/dfr_agg-groups.html">dfr agg-groups</a></td><td style="white-space:pre-wrap;">expression
+</td><td style="white-space:pre-wrap;">creates an agg_groups expression
+</td></tr><tr><td><a href="/commands/docs/dfr_all-false.html">dfr all-false</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Returns true if all values are false
+</td></tr><tr><td><a href="/commands/docs/dfr_all-true.html">dfr all-true</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Returns true if all values are true
+</td></tr><tr><td><a href="/commands/docs/dfr_append.html">dfr append</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Appends a new dataframe
+</td></tr><tr><td><a href="/commands/docs/dfr_arg-max.html">dfr arg-max</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Return index for max value in series
+</td></tr><tr><td><a href="/commands/docs/dfr_arg-min.html">dfr arg-min</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Return index for min value in series
+</td></tr><tr><td><a href="/commands/docs/dfr_arg-sort.html">dfr arg-sort</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Returns indexes for a sorted series
+</td></tr><tr><td><a href="/commands/docs/dfr_arg-true.html">dfr arg-true</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Returns indexes where values are true
+</td></tr><tr><td><a href="/commands/docs/dfr_arg-unique.html">dfr arg-unique</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Returns indexes for unique values
+</td></tr><tr><td><a href="/commands/docs/dfr_arg-where.html">dfr arg-where</a></td><td style="white-space:pre-wrap;">expression
+</td><td style="white-space:pre-wrap;">Creates an expression that returns the arguments where expression is true
+</td></tr><tr><td><a href="/commands/docs/dfr_as.html">dfr as</a></td><td style="white-space:pre-wrap;">expression
+</td><td style="white-space:pre-wrap;">Creates an alias expression
+</td></tr><tr><td><a href="/commands/docs/dfr_as-date.html">dfr as-date</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Converts string to date.
+</td></tr><tr><td><a href="/commands/docs/dfr_as-datetime.html">dfr as-datetime</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Converts string to datetime.
+</td></tr><tr><td><a href="/commands/docs/dfr_cache.html">dfr cache</a></td><td style="white-space:pre-wrap;">lazyframe
+</td><td style="white-space:pre-wrap;">Caches operations in a new LazyFrame
+</td></tr><tr><td><a href="/commands/docs/dfr_col.html">dfr col</a></td><td style="white-space:pre-wrap;">expression
+</td><td style="white-space:pre-wrap;">Creates a named column expression
+</td></tr><tr><td><a href="/commands/docs/dfr_collect.html">dfr collect</a></td><td style="white-space:pre-wrap;">lazyframe
+</td><td style="white-space:pre-wrap;">Collect lazy dataframe into eager dataframe
+</td></tr><tr><td><a href="/commands/docs/dfr_columns.html">dfr columns</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Show dataframe columns
+</td></tr><tr><td><a href="/commands/docs/dfr_concat-str.html">dfr concat-str</a></td><td style="white-space:pre-wrap;">expression
+</td><td style="white-space:pre-wrap;">Creates a concat string expression
+</td></tr><tr><td><a href="/commands/docs/dfr_concatenate.html">dfr concatenate</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Concatenates strings with other array
+</td></tr><tr><td><a href="/commands/docs/dfr_contains.html">dfr contains</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Checks if a pattern is contained in a string
+</td></tr><tr><td><a href="/commands/docs/dfr_count.html">dfr count</a></td><td style="white-space:pre-wrap;">expression
+</td><td style="white-space:pre-wrap;">creates a count expression
+</td></tr><tr><td><a href="/commands/docs/dfr_count-null.html">dfr count-null</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Counts null values
+</td></tr><tr><td><a href="/commands/docs/dfr_cumulative.html">dfr cumulative</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Cumulative calculation for a series
+</td></tr><tr><td><a href="/commands/docs/dfr_drop.html">dfr drop</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Creates a new dataframe by dropping the selected columns
+</td></tr><tr><td><a href="/commands/docs/dfr_drop-duplicates.html">dfr drop-duplicates</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Drops duplicate values in dataframe
+</td></tr><tr><td><a href="/commands/docs/dfr_drop-nulls.html">dfr drop-nulls</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Drops null values in dataframe
+</td></tr><tr><td><a href="/commands/docs/dfr_dtypes.html">dfr dtypes</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Show dataframe data types
+</td></tr><tr><td><a href="/commands/docs/dfr_dummies.html">dfr dummies</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Creates a new dataframe with dummy variables
+</td></tr><tr><td><a href="/commands/docs/dfr_explode.html">dfr explode</a></td><td style="white-space:pre-wrap;">expression
+</td><td style="white-space:pre-wrap;">creates an explode expression
+</td></tr><tr><td><a href="/commands/docs/dfr_expr-not.html">dfr expr-not</a></td><td style="white-space:pre-wrap;">expression
+</td><td style="white-space:pre-wrap;">creates a not expression
+</td></tr><tr><td><a href="/commands/docs/dfr_fetch.html">dfr fetch</a></td><td style="white-space:pre-wrap;">lazyframe
+</td><td style="white-space:pre-wrap;">collects the lazyframe to the selected rows
+</td></tr><tr><td><a href="/commands/docs/dfr_fill-nan.html">dfr fill-nan</a></td><td style="white-space:pre-wrap;">lazyframe
+</td><td style="white-space:pre-wrap;">Replaces NaN values with the given expression
+</td></tr><tr><td><a href="/commands/docs/dfr_fill-null.html">dfr fill-null</a></td><td style="white-space:pre-wrap;">lazyframe
+</td><td style="white-space:pre-wrap;">Replaces NULL values with the given expression
+</td></tr><tr><td><a href="/commands/docs/dfr_filter.html">dfr filter</a></td><td style="white-space:pre-wrap;">lazyframe
+</td><td style="white-space:pre-wrap;">Filter dataframe based in expression
+</td></tr><tr><td><a href="/commands/docs/dfr_filter-with.html">dfr filter-with</a></td><td style="white-space:pre-wrap;">dataframe or lazyframe
+</td><td style="white-space:pre-wrap;">Filters dataframe using a mask or expression as reference
+</td></tr><tr><td><a href="/commands/docs/dfr_first.html">dfr first</a></td><td style="white-space:pre-wrap;">dataframe
+expression
+</td><td style="white-space:pre-wrap;">Show only the first number of rows.
+creates a first expression
+</td></tr><tr><td><a href="/commands/docs/dfr_flatten.html">dfr flatten</a></td><td style="white-space:pre-wrap;">expression
+</td><td style="white-space:pre-wrap;">creates a flatten expression
+</td></tr><tr><td><a href="/commands/docs/dfr_get.html">dfr get</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Creates dataframe with the selected columns
+</td></tr><tr><td><a href="/commands/docs/dfr_get-day.html">dfr get-day</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Gets day from date
+</td></tr><tr><td><a href="/commands/docs/dfr_get-hour.html">dfr get-hour</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Gets hour from date
+</td></tr><tr><td><a href="/commands/docs/dfr_get-minute.html">dfr get-minute</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Gets minute from date
+</td></tr><tr><td><a href="/commands/docs/dfr_get-month.html">dfr get-month</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Gets month from date
+</td></tr><tr><td><a href="/commands/docs/dfr_get-nanosecond.html">dfr get-nanosecond</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Gets nanosecond from date
+</td></tr><tr><td><a href="/commands/docs/dfr_get-ordinal.html">dfr get-ordinal</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Gets ordinal from date
+</td></tr><tr><td><a href="/commands/docs/dfr_get-second.html">dfr get-second</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Gets second from date
+</td></tr><tr><td><a href="/commands/docs/dfr_get-week.html">dfr get-week</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Gets week from date
+</td></tr><tr><td><a href="/commands/docs/dfr_get-weekday.html">dfr get-weekday</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Gets weekday from date
+</td></tr><tr><td><a href="/commands/docs/dfr_get-year.html">dfr get-year</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Gets year from date
+</td></tr><tr><td><a href="/commands/docs/dfr_group-by.html">dfr group-by</a></td><td style="white-space:pre-wrap;">lazyframe
+</td><td style="white-space:pre-wrap;">Creates a group-by object that can be used for other aggregations
+</td></tr><tr><td><a href="/commands/docs/dfr_into-df.html">dfr into-df</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Converts a list, table or record into a dataframe
+</td></tr><tr><td><a href="/commands/docs/dfr_into-lazy.html">dfr into-lazy</a></td><td style="white-space:pre-wrap;">lazyframe
+</td><td style="white-space:pre-wrap;">Converts a dataframe into a lazy dataframe
+</td></tr><tr><td><a href="/commands/docs/dfr_into-nu.html">dfr into-nu</a></td><td style="white-space:pre-wrap;">dataframe
+expression
+</td><td style="white-space:pre-wrap;">Converts a section of the dataframe into nushell Table
+Convert expression into a nu value for access and exploration
+</td></tr><tr><td><a href="/commands/docs/dfr_is-duplicated.html">dfr is-duplicated</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Creates mask indicating duplicated values
+</td></tr><tr><td><a href="/commands/docs/dfr_is-in.html">dfr is-in</a></td><td style="white-space:pre-wrap;">dataframe
+expression
+</td><td style="white-space:pre-wrap;">Checks if elements from a series are contained in right series
+Creates an is-in expression
+</td></tr><tr><td><a href="/commands/docs/dfr_is-not-null.html">dfr is-not-null</a></td><td style="white-space:pre-wrap;">dataframe
+expression
+</td><td style="white-space:pre-wrap;">Creates mask where value is not null
+creates a is not null expression
+</td></tr><tr><td><a href="/commands/docs/dfr_is-null.html">dfr is-null</a></td><td style="white-space:pre-wrap;">dataframe
+expression
+</td><td style="white-space:pre-wrap;">Creates mask where value is null
+creates a is null expression
+</td></tr><tr><td><a href="/commands/docs/dfr_is-unique.html">dfr is-unique</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Creates mask indicating unique values
+</td></tr><tr><td><a href="/commands/docs/dfr_join.html">dfr join</a></td><td style="white-space:pre-wrap;">lazyframe
+</td><td style="white-space:pre-wrap;">Joins a lazy frame with other lazy frame
+</td></tr><tr><td><a href="/commands/docs/dfr_last.html">dfr last</a></td><td style="white-space:pre-wrap;">dataframe
+expression
+</td><td style="white-space:pre-wrap;">Creates new dataframe with tail rows or creates a last expression
+creates a last expression
+</td></tr><tr><td><a href="/commands/docs/dfr_list.html">dfr list</a></td><td style="white-space:pre-wrap;">expression
+</td><td style="white-space:pre-wrap;">Aggregates a group to a Series
+</td></tr><tr><td><a href="/commands/docs/dfr_lit.html">dfr lit</a></td><td style="white-space:pre-wrap;">expression
+</td><td style="white-space:pre-wrap;">Creates a literal expression
+</td></tr><tr><td><a href="/commands/docs/dfr_lowercase.html">dfr lowercase</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Lowercase the strings in the column
+</td></tr><tr><td><a href="/commands/docs/dfr_ls.html">dfr ls</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Lists stored dataframes
+</td></tr><tr><td><a href="/commands/docs/dfr_max.html">dfr max</a></td><td style="white-space:pre-wrap;">expression
+lazyframe
+</td><td style="white-space:pre-wrap;">Creates a max expression
+Aggregates columns to their max value
+</td></tr><tr><td><a href="/commands/docs/dfr_mean.html">dfr mean</a></td><td style="white-space:pre-wrap;">expression
+lazyframe
+</td><td style="white-space:pre-wrap;">Creates a mean expression for an aggregation
+Aggregates columns to their mean value
+</td></tr><tr><td><a href="/commands/docs/dfr_median.html">dfr median</a></td><td style="white-space:pre-wrap;">expression
+lazyframe
+</td><td style="white-space:pre-wrap;">Creates a median expression for an aggregation
+Aggregates columns to their median value
+</td></tr><tr><td><a href="/commands/docs/dfr_melt.html">dfr melt</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Unpivot a DataFrame from wide to long format
+</td></tr><tr><td><a href="/commands/docs/dfr_min.html">dfr min</a></td><td style="white-space:pre-wrap;">expression
+lazyframe
+</td><td style="white-space:pre-wrap;">Creates a min expression
+Aggregates columns to their min value
+</td></tr><tr><td><a href="/commands/docs/dfr_n-unique.html">dfr n-unique</a></td><td style="white-space:pre-wrap;">dataframe
+expression
+</td><td style="white-space:pre-wrap;">Counts unique values
+creates a n-unique expression
+</td></tr><tr><td><a href="/commands/docs/dfr_not.html">dfr not</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Inverts boolean mask
+</td></tr><tr><td><a href="/commands/docs/dfr_open.html">dfr open</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Opens csv, json, arrow, or parquet file to create dataframe
+</td></tr><tr><td><a href="/commands/docs/dfr_otherwise.html">dfr otherwise</a></td><td style="white-space:pre-wrap;">expression
+</td><td style="white-space:pre-wrap;">completes a when expression
+</td></tr><tr><td><a href="/commands/docs/dfr_quantile.html">dfr quantile</a></td><td style="white-space:pre-wrap;">expression
+lazyframe
+</td><td style="white-space:pre-wrap;">Aggregates the columns to the selected quantile
+Aggregates the columns to the selected quantile
+</td></tr><tr><td><a href="/commands/docs/dfr_query.html">dfr query</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Query dataframe using SQL. Note: The dataframe is always named &#39;df&#39; in your query&#39;s from clause.
+</td></tr><tr><td><a href="/commands/docs/dfr_rename.html">dfr rename</a></td><td style="white-space:pre-wrap;">dataframe or lazyframe
+</td><td style="white-space:pre-wrap;">Rename a dataframe column
+</td></tr><tr><td><a href="/commands/docs/dfr_replace.html">dfr replace</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Replace the leftmost (sub)string by a regex pattern
+</td></tr><tr><td><a href="/commands/docs/dfr_replace-all.html">dfr replace-all</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Replace all (sub)strings by a regex pattern
+</td></tr><tr><td><a href="/commands/docs/dfr_reverse.html">dfr reverse</a></td><td style="white-space:pre-wrap;">lazyframe
+</td><td style="white-space:pre-wrap;">Reverses the LazyFrame
+</td></tr><tr><td><a href="/commands/docs/dfr_rolling.html">dfr rolling</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Rolling calculation for a series
+</td></tr><tr><td><a href="/commands/docs/dfr_sample.html">dfr sample</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Create sample dataframe
+</td></tr><tr><td><a href="/commands/docs/dfr_select.html">dfr select</a></td><td style="white-space:pre-wrap;">lazyframe
+</td><td style="white-space:pre-wrap;">Selects columns from lazyframe
+</td></tr><tr><td><a href="/commands/docs/dfr_set.html">dfr set</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Sets value where given mask is true
+</td></tr><tr><td><a href="/commands/docs/dfr_set-with-idx.html">dfr set-with-idx</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Sets value in the given index
+</td></tr><tr><td><a href="/commands/docs/dfr_shape.html">dfr shape</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Shows column and row size for a dataframe
+</td></tr><tr><td><a href="/commands/docs/dfr_shift.html">dfr shift</a></td><td style="white-space:pre-wrap;">dataframe or lazyframe
+</td><td style="white-space:pre-wrap;">Shifts the values by a given period
+</td></tr><tr><td><a href="/commands/docs/dfr_slice.html">dfr slice</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Creates new dataframe from a slice of rows
+</td></tr><tr><td><a href="/commands/docs/dfr_sort-by.html">dfr sort-by</a></td><td style="white-space:pre-wrap;">lazyframe
+</td><td style="white-space:pre-wrap;">sorts a lazy dataframe based on expression(s)
+</td></tr><tr><td><a href="/commands/docs/dfr_std.html">dfr std</a></td><td style="white-space:pre-wrap;">expression
+lazyframe
+</td><td style="white-space:pre-wrap;">Creates a std expression for an aggregation
+Aggregates columns to their std value
+</td></tr><tr><td><a href="/commands/docs/dfr_str-lengths.html">dfr str-lengths</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Get lengths of all strings
+</td></tr><tr><td><a href="/commands/docs/dfr_str-slice.html">dfr str-slice</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Slices the string from the start position until the selected length
+</td></tr><tr><td><a href="/commands/docs/dfr_strftime.html">dfr strftime</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Formats date based on string rule
+</td></tr><tr><td><a href="/commands/docs/dfr_sum.html">dfr sum</a></td><td style="white-space:pre-wrap;">expression
+lazyframe
+</td><td style="white-space:pre-wrap;">Creates a sum expression for an aggregation
+Aggregates columns to their sum value
+</td></tr><tr><td><a href="/commands/docs/dfr_summary.html">dfr summary</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">For a dataframe, produces descriptive statistics (summary statistics) for its numeric columns.
+</td></tr><tr><td><a href="/commands/docs/dfr_take.html">dfr take</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Creates new dataframe using the given indices
+</td></tr><tr><td><a href="/commands/docs/dfr_to-arrow.html">dfr to-arrow</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Saves dataframe to arrow file
+</td></tr><tr><td><a href="/commands/docs/dfr_to-csv.html">dfr to-csv</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Saves dataframe to csv file
+</td></tr><tr><td><a href="/commands/docs/dfr_to-parquet.html">dfr to-parquet</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Saves dataframe to parquet file
+</td></tr><tr><td><a href="/commands/docs/dfr_unique.html">dfr unique</a></td><td style="white-space:pre-wrap;">dataframe or lazyframe
+</td><td style="white-space:pre-wrap;">Returns unique values from a dataframe
+</td></tr><tr><td><a href="/commands/docs/dfr_uppercase.html">dfr uppercase</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Uppercase the strings in the column
+</td></tr><tr><td><a href="/commands/docs/dfr_value-counts.html">dfr value-counts</a></td><td style="white-space:pre-wrap;">dataframe
+</td><td style="white-space:pre-wrap;">Returns a dataframe with the counts for unique values in series
+</td></tr><tr><td><a href="/commands/docs/dfr_var.html">dfr var</a></td><td style="white-space:pre-wrap;">expression
+lazyframe
+</td><td style="white-space:pre-wrap;">Create a var expression for an aggregation
+Aggregates columns to their var value
+</td></tr><tr><td><a href="/commands/docs/dfr_when.html">dfr when</a></td><td style="white-space:pre-wrap;">expression
+</td><td style="white-space:pre-wrap;">Creates and modifies a when expression
+</td></tr><tr><td><a href="/commands/docs/dfr_with-column.html">dfr with-column</a></td><td style="white-space:pre-wrap;">dataframe or lazyframe
+</td><td style="white-space:pre-wrap;">Adds a series to the dataframe
+</td></tr><tr><td><a href="/commands/docs/do.html">do</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Run a closure, providing it with the pipeline input
+</td></tr><tr><td><a href="/commands/docs/drop.html">drop</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Remove items/rows from the end of the input list/table. Counterpart of &#39;skip&#39;. Opposite of &#39;last&#39;.
+</td></tr><tr><td><a href="/commands/docs/drop_column.html">drop column</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Remove N columns at the right-hand end of the input table. To remove columns by name, use &#39;reject&#39;.
+</td></tr><tr><td><a href="/commands/docs/drop_nth.html">drop nth</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Drop the selected rows.
+</td></tr><tr><td><a href="/commands/docs/du.html">du</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Find disk usage sizes of specified items.
+</td></tr><tr><td><a href="/commands/docs/each.html">each</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Run a closure on each row of the input list, creating a new list with the results.
+</td></tr><tr><td><a href="/commands/docs/each_while.html">each while</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Run a block on each row of the input list until a null is found, then create a new list with the results.
+</td></tr><tr><td><a href="/commands/docs/echo.html">echo</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Returns its arguments, ignoring the piped-in value.
+</td></tr><tr><td><a href="/commands/docs/encode.html">encode</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Encode a string into bytes.
+</td></tr><tr><td><a href="/commands/docs/encode_base64.html">encode base64</a></td><td style="white-space:pre-wrap;">hash
+</td><td style="white-space:pre-wrap;">Encode a string or binary value using Base64
+</td></tr><tr><td><a href="/commands/docs/enter.html">enter</a></td><td style="white-space:pre-wrap;">shells
+</td><td style="white-space:pre-wrap;">Enters a new shell at the given path.
+</td></tr><tr><td><a href="/commands/docs/enumerate.html">enumerate</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Enumerate the elements in a stream.
+</td></tr><tr><td><a href="/commands/docs/env.html">env</a></td><td style="white-space:pre-wrap;">env
+</td><td style="white-space:pre-wrap;">Display current environment variables
+</td></tr><tr><td><a href="/commands/docs/error_make.html">error make</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Create an error.
+</td></tr><tr><td><a href="/commands/docs/every.html">every</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Show (or skip) every n-th row, starting from the first one.
+</td></tr><tr><td><a href="/commands/docs/exec.html">exec</a></td><td style="white-space:pre-wrap;">system
+</td><td style="white-space:pre-wrap;">Execute a command, replacing the current process.
+</td></tr><tr><td><a href="/commands/docs/exit.html">exit</a></td><td style="white-space:pre-wrap;">shells
+</td><td style="white-space:pre-wrap;">Exit a Nu shell or exit Nu entirely.
+</td></tr><tr><td><a href="/commands/docs/explain.html">explain</a></td><td style="white-space:pre-wrap;">debug
+</td><td style="white-space:pre-wrap;">Explain closure contents.
+</td></tr><tr><td><a href="/commands/docs/explore.html">explore</a></td><td style="white-space:pre-wrap;">viewers
+</td><td style="white-space:pre-wrap;">Explore acts as a table pager, just like `less` does for text
+</td></tr><tr><td><a href="/commands/docs/export.html">export</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Export definitions or environment variables from a module.
+</td></tr><tr><td><a href="/commands/docs/export_alias.html">export alias</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Define an alias and export it from a module
+</td></tr><tr><td><a href="/commands/docs/export_def.html">export def</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Define a custom command and export it from a module
+</td></tr><tr><td><a href="/commands/docs/export_def-env.html">export def-env</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Define a custom command that participates in the environment and export it from a module
+</td></tr><tr><td><a href="/commands/docs/export_extern.html">export extern</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Define an extern and export it from a module
+</td></tr><tr><td><a href="/commands/docs/export_use.html">export use</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Use definitions from a module and export them from this module
+</td></tr><tr><td><a href="/commands/docs/export-env.html">export-env</a></td><td style="white-space:pre-wrap;">env
+</td><td style="white-space:pre-wrap;">Run a block and preserve its environment in a current scope.
+</td></tr><tr><td><a href="/commands/docs/extern.html">extern</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Define a signature for an external command
+</td></tr><tr><td><a href="/commands/docs/fill.html">fill</a></td><td style="white-space:pre-wrap;">conversions
+</td><td style="white-space:pre-wrap;">Fill and Align
+</td></tr><tr><td><a href="/commands/docs/filter.html">filter</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Filter values based on a predicate closure.
+</td></tr><tr><td><a href="/commands/docs/find.html">find</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Searches terms in the input.
+</td></tr><tr><td><a href="/commands/docs/first.html">first</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Return only the first several rows of the input. Counterpart of &#39;last&#39;. Opposite of &#39;skip&#39;.
+</td></tr><tr><td><a href="/commands/docs/flatten.html">flatten</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Flatten the table.
+</td></tr><tr><td><a href="/commands/docs/fmt.html">fmt</a></td><td style="white-space:pre-wrap;">conversions
+</td><td style="white-space:pre-wrap;">Format a number
+</td></tr><tr><td><a href="/commands/docs/for.html">for</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Loop over a range
+</td></tr><tr><td><a href="/commands/docs/format.html">format</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Format columns into a string using a simple pattern.
+</td></tr><tr><td><a href="/commands/docs/format_filesize.html">format filesize</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Converts a column of filesizes to some specified format
+</td></tr><tr><td><a href="/commands/docs/from.html">from</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Parse a string or binary data into structured data
+</td></tr><tr><td><a href="/commands/docs/from_csv.html">from csv</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Parse text as .csv and create table.
+</td></tr><tr><td><a href="/commands/docs/from_eml.html">from eml</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Parse text as .eml and create record.
+</td></tr><tr><td><a href="/commands/docs/from_ics.html">from ics</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Parse text as .ics and create table.
+</td></tr><tr><td><a href="/commands/docs/from_ini.html">from ini</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Parse text as .ini and create table.
+</td></tr><tr><td><a href="/commands/docs/from_json.html">from json</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Convert from json to structured data
+</td></tr><tr><td><a href="/commands/docs/from_nuon.html">from nuon</a></td><td style="white-space:pre-wrap;">experimental
+</td><td style="white-space:pre-wrap;">Convert from nuon to structured data
+</td></tr><tr><td><a href="/commands/docs/from_ods.html">from ods</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Parse OpenDocument Spreadsheet(.ods) data and create table.
+</td></tr><tr><td><a href="/commands/docs/from_ssv.html">from ssv</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Parse text as space-separated values and create a table. The default minimum number of spaces counted as a separator is 2.
+</td></tr><tr><td><a href="/commands/docs/from_toml.html">from toml</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Parse text as .toml and create record.
+</td></tr><tr><td><a href="/commands/docs/from_tsv.html">from tsv</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Parse text as .tsv and create table.
+</td></tr><tr><td><a href="/commands/docs/from_url.html">from url</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Parse url-encoded string as a record.
+</td></tr><tr><td><a href="/commands/docs/from_vcf.html">from vcf</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Parse text as .vcf and create table.
+</td></tr><tr><td><a href="/commands/docs/from_xlsx.html">from xlsx</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Parse binary Excel(.xlsx) data and create table.
+</td></tr><tr><td><a href="/commands/docs/from_xml.html">from xml</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Parse text as .xml and create record.
+</td></tr><tr><td><a href="/commands/docs/from_yaml.html">from yaml</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Parse text as .yaml/.yml and create table.
+</td></tr><tr><td><a href="/commands/docs/from_yml.html">from yml</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Parse text as .yaml/.yml and create table.
+</td></tr><tr><td><a href="/commands/docs/g.html">g</a></td><td style="white-space:pre-wrap;">shells
+</td><td style="white-space:pre-wrap;">Switch to a given shell, or list all shells if no given shell number.
+</td></tr><tr><td><a href="/commands/docs/get.html">get</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Extract data using a cell path.
+</td></tr><tr><td><a href="/commands/docs/glob.html">glob</a></td><td style="white-space:pre-wrap;">filesystem
+</td><td style="white-space:pre-wrap;">Creates a list of files and/or folders based on the glob pattern provided.
+</td></tr><tr><td><a href="/commands/docs/grid.html">grid</a></td><td style="white-space:pre-wrap;">viewers
+</td><td style="white-space:pre-wrap;">Renders the output to a textual terminal grid.
+</td></tr><tr><td><a href="/commands/docs/group.html">group</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Groups input into groups of `group_size`.
+</td></tr><tr><td><a href="/commands/docs/group-by.html">group-by</a></td><td style="white-space:pre-wrap;">default
+</td><td style="white-space:pre-wrap;">Splits a list or table into groups, and returns a record containing those groups.
+</td></tr><tr><td><a href="/commands/docs/gstat.html">gstat</a></td><td style="white-space:pre-wrap;">prompt
+</td><td style="white-space:pre-wrap;">Get the git status of a repo
+</td></tr><tr><td><a href="/commands/docs/hash.html">hash</a></td><td style="white-space:pre-wrap;">hash
+</td><td style="white-space:pre-wrap;">Apply hash function.
+</td></tr><tr><td><a href="/commands/docs/hash_base64.html">hash base64</a></td><td style="white-space:pre-wrap;">deprecated
+</td><td style="white-space:pre-wrap;">Deprecated command
+</td></tr><tr><td><a href="/commands/docs/hash_md5.html">hash md5</a></td><td style="white-space:pre-wrap;">default
+</td><td style="white-space:pre-wrap;">Hash a value using the md5 hash algorithm
+</td></tr><tr><td><a href="/commands/docs/hash_sha256.html">hash sha256</a></td><td style="white-space:pre-wrap;">default
+</td><td style="white-space:pre-wrap;">Hash a value using the sha256 hash algorithm
+</td></tr><tr><td><a href="/commands/docs/headers.html">headers</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Use the first row of the table as column names.
+</td></tr><tr><td><a href="/commands/docs/help.html">help</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Display help information about different parts of Nushell.
+</td></tr><tr><td><a href="/commands/docs/help_aliases.html">help aliases</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Show help on nushell aliases.
+</td></tr><tr><td><a href="/commands/docs/help_commands.html">help commands</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Show help on nushell commands.
+</td></tr><tr><td><a href="/commands/docs/help_modules.html">help modules</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Show help on nushell modules.
+</td></tr><tr><td><a href="/commands/docs/help_operators.html">help operators</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Show help on nushell operators.
+</td></tr><tr><td><a href="/commands/docs/hide.html">hide</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Hide definitions in the current scope
+</td></tr><tr><td><a href="/commands/docs/hide-env.html">hide-env</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Hide environment variables in the current scope
+</td></tr><tr><td><a href="/commands/docs/histogram.html">histogram</a></td><td style="white-space:pre-wrap;">default
+</td><td style="white-space:pre-wrap;">Creates a new table with a histogram based on the column name passed in.
+</td></tr><tr><td><a href="/commands/docs/history.html">history</a></td><td style="white-space:pre-wrap;">misc
+</td><td style="white-space:pre-wrap;">Get the command history
+</td></tr><tr><td><a href="/commands/docs/history_session.html">history session</a></td><td style="white-space:pre-wrap;">misc
+</td><td style="white-space:pre-wrap;">Get the command history session
+</td></tr><tr><td><a href="/commands/docs/http.html">http</a></td><td style="white-space:pre-wrap;">network
+</td><td style="white-space:pre-wrap;">Various commands for working with http methods
+</td></tr><tr><td><a href="/commands/docs/http_get.html">http get</a></td><td style="white-space:pre-wrap;">network
+</td><td style="white-space:pre-wrap;">Fetch the contents from a URL.
+</td></tr><tr><td><a href="/commands/docs/http_post.html">http post</a></td><td style="white-space:pre-wrap;">network
+</td><td style="white-space:pre-wrap;">Post a body to a URL.
+</td></tr><tr><td><a href="/commands/docs/if.html">if</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Conditionally run a block.
+</td></tr><tr><td><a href="/commands/docs/ignore.html">ignore</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Ignore the output of the previous command in the pipeline
+</td></tr><tr><td><a href="/commands/docs/inc.html">inc</a></td><td style="white-space:pre-wrap;">default
+</td><td style="white-space:pre-wrap;">Increment a value or version. Optionally use the column of a table.
+</td></tr><tr><td><a href="/commands/docs/input.html">input</a></td><td style="white-space:pre-wrap;">platform
+</td><td style="white-space:pre-wrap;">Get input from the user.
+</td></tr><tr><td><a href="/commands/docs/insert.html">insert</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Insert a new column, using an expression or closure to create each row&#39;s values.
+</td></tr><tr><td><a href="/commands/docs/inspect.html">inspect</a></td><td style="white-space:pre-wrap;">debug
+</td><td style="white-space:pre-wrap;">Inspect pipeline results while running a pipeline
+</td></tr><tr><td><a href="/commands/docs/into.html">into</a></td><td style="white-space:pre-wrap;">conversions
+</td><td style="white-space:pre-wrap;">Commands to convert data from one type to another.
+</td></tr><tr><td><a href="/commands/docs/into_binary.html">into binary</a></td><td style="white-space:pre-wrap;">conversions
+</td><td style="white-space:pre-wrap;">Convert value to a binary primitive
+</td></tr><tr><td><a href="/commands/docs/into_bool.html">into bool</a></td><td style="white-space:pre-wrap;">conversions
+</td><td style="white-space:pre-wrap;">Convert value to boolean
+</td></tr><tr><td><a href="/commands/docs/into_datetime.html">into datetime</a></td><td style="white-space:pre-wrap;">conversions
+</td><td style="white-space:pre-wrap;">Convert text into a datetime
+</td></tr><tr><td><a href="/commands/docs/into_decimal.html">into decimal</a></td><td style="white-space:pre-wrap;">default
+</td><td style="white-space:pre-wrap;">Convert text into a decimal
+</td></tr><tr><td><a href="/commands/docs/into_duration.html">into duration</a></td><td style="white-space:pre-wrap;">conversions
+</td><td style="white-space:pre-wrap;">Convert value to duration
+</td></tr><tr><td><a href="/commands/docs/into_filesize.html">into filesize</a></td><td style="white-space:pre-wrap;">conversions
+</td><td style="white-space:pre-wrap;">Convert value to filesize
+</td></tr><tr><td><a href="/commands/docs/into_int.html">into int</a></td><td style="white-space:pre-wrap;">conversions
+</td><td style="white-space:pre-wrap;">Convert value to integer
+</td></tr><tr><td><a href="/commands/docs/into_record.html">into record</a></td><td style="white-space:pre-wrap;">conversions
+</td><td style="white-space:pre-wrap;">Convert value to record
+</td></tr><tr><td><a href="/commands/docs/into_sqlite.html">into sqlite</a></td><td style="white-space:pre-wrap;">conversions
+</td><td style="white-space:pre-wrap;">Convert table into a SQLite database
+</td></tr><tr><td><a href="/commands/docs/into_string.html">into string</a></td><td style="white-space:pre-wrap;">conversions
+</td><td style="white-space:pre-wrap;">Convert value to string
+</td></tr><tr><td><a href="/commands/docs/is-admin.html">is-admin</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Check if nushell is running with administrator or root privileges
+</td></tr><tr><td><a href="/commands/docs/is-empty.html">is-empty</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Check for empty values.
+</td></tr><tr><td><a href="/commands/docs/keybindings.html">keybindings</a></td><td style="white-space:pre-wrap;">platform
+</td><td style="white-space:pre-wrap;">Keybindings related commands
+</td></tr><tr><td><a href="/commands/docs/keybindings_default.html">keybindings default</a></td><td style="white-space:pre-wrap;">platform
+</td><td style="white-space:pre-wrap;">List default keybindings
+</td></tr><tr><td><a href="/commands/docs/keybindings_list.html">keybindings list</a></td><td style="white-space:pre-wrap;">platform
+</td><td style="white-space:pre-wrap;">List available options that can be used to create keybindings
+</td></tr><tr><td><a href="/commands/docs/keybindings_listen.html">keybindings listen</a></td><td style="white-space:pre-wrap;">platform
+</td><td style="white-space:pre-wrap;">Get input from the user.
+</td></tr><tr><td><a href="/commands/docs/kill.html">kill</a></td><td style="white-space:pre-wrap;">platform
+</td><td style="white-space:pre-wrap;">Kill a process using the process id.
+</td></tr><tr><td><a href="/commands/docs/last.html">last</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Return only the last several rows of the input. Counterpart of &#39;first&#39;. Opposite of &#39;drop&#39;.
+</td></tr><tr><td><a href="/commands/docs/length.html">length</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Count the number of elements in the input.
+</td></tr><tr><td><a href="/commands/docs/let.html">let</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Create a variable and give it a value.
+</td></tr><tr><td><a href="/commands/docs/let-env.html">let-env</a></td><td style="white-space:pre-wrap;">env
+</td><td style="white-space:pre-wrap;">Create an environment variable and give it a value.
+</td></tr><tr><td><a href="/commands/docs/lines.html">lines</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Converts input to lines
+</td></tr><tr><td><a href="/commands/docs/load-env.html">load-env</a></td><td style="white-space:pre-wrap;">filesystem
+</td><td style="white-space:pre-wrap;">Loads an environment update from a record.
+</td></tr><tr><td><a href="/commands/docs/loop.html">loop</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Run a block in a loop.
+</td></tr><tr><td><a href="/commands/docs/ls.html">ls</a></td><td style="white-space:pre-wrap;">filesystem
+</td><td style="white-space:pre-wrap;">List the filenames, sizes, and modification times of items in a directory.
+</td></tr><tr><td><a href="/commands/docs/math.html">math</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Use mathematical functions as aggregate functions on a list of numbers or tables.
+</td></tr><tr><td><a href="/commands/docs/math_abs.html">math abs</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the absolute value of a number
+</td></tr><tr><td><a href="/commands/docs/math_arccos.html">math arccos</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the arccosine of the number.
+</td></tr><tr><td><a href="/commands/docs/math_arccosh.html">math arccosh</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the inverse of the hyperbolic cosine function.
+</td></tr><tr><td><a href="/commands/docs/math_arcsin.html">math arcsin</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the arcsine of the number.
+</td></tr><tr><td><a href="/commands/docs/math_arcsinh.html">math arcsinh</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the inverse of the hyperbolic sine function.
+</td></tr><tr><td><a href="/commands/docs/math_arctan.html">math arctan</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the arctangent of the number.
+</td></tr><tr><td><a href="/commands/docs/math_arctanh.html">math arctanh</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the inverse of the hyperbolic tangent function.
+</td></tr><tr><td><a href="/commands/docs/math_avg.html">math avg</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the average of a list of numbers
+</td></tr><tr><td><a href="/commands/docs/math_ceil.html">math ceil</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the ceil of a number (smallest integer greater than or equal to that number)
+</td></tr><tr><td><a href="/commands/docs/math_cos.html">math cos</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the cosine of the number.
+</td></tr><tr><td><a href="/commands/docs/math_cosh.html">math cosh</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the hyperbolic cosine of the number.
+</td></tr><tr><td><a href="/commands/docs/math_e.html">math e</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the mathematical constant e (exp(1)/&#39;1 | math exp&#39;).
+</td></tr><tr><td><a href="/commands/docs/math_eval.html">math eval</a></td><td style="white-space:pre-wrap;">deprecated
+</td><td style="white-space:pre-wrap;">Deprecated command
+</td></tr><tr><td><a href="/commands/docs/math_floor.html">math floor</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the floor of a number (largest integer less than or equal to that number)
+</td></tr><tr><td><a href="/commands/docs/math_ln.html">math ln</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the natural logarithm. Base: (math e)
+</td></tr><tr><td><a href="/commands/docs/math_log.html">math log</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the logarithm for an arbitrary base.
+</td></tr><tr><td><a href="/commands/docs/math_max.html">math max</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the maximum of a list of numbers, or of columns in a table
+</td></tr><tr><td><a href="/commands/docs/math_median.html">math median</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Computes the median of a list of numbers
+</td></tr><tr><td><a href="/commands/docs/math_min.html">math min</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Finds the minimum within a list of numbers or tables
+</td></tr><tr><td><a href="/commands/docs/math_mode.html">math mode</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the most frequent element(s) from a list of numbers or tables
+</td></tr><tr><td><a href="/commands/docs/math_pi.html">math pi</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the mathematical constant π.
+</td></tr><tr><td><a href="/commands/docs/math_product.html">math product</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the product of a list of numbers or the products of each column of a table
+</td></tr><tr><td><a href="/commands/docs/math_round.html">math round</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the input number rounded to the specified precision
+</td></tr><tr><td><a href="/commands/docs/math_sin.html">math sin</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the sine of the number.
+</td></tr><tr><td><a href="/commands/docs/math_sinh.html">math sinh</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the hyperbolic sine of the number.
+</td></tr><tr><td><a href="/commands/docs/math_sqrt.html">math sqrt</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the square root of the input number
+</td></tr><tr><td><a href="/commands/docs/math_stddev.html">math stddev</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the standard deviation of a list of numbers, or of each column in a table
+</td></tr><tr><td><a href="/commands/docs/math_sum.html">math sum</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the sum of a list of numbers or of each column in a table
+</td></tr><tr><td><a href="/commands/docs/math_tan.html">math tan</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the tangent of the number.
+</td></tr><tr><td><a href="/commands/docs/math_tanh.html">math tanh</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the hyperbolic tangent of the number.
+</td></tr><tr><td><a href="/commands/docs/math_tau.html">math tau</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the mathematical constant τ.
+</td></tr><tr><td><a href="/commands/docs/math_variance.html">math variance</a></td><td style="white-space:pre-wrap;">math
+</td><td style="white-space:pre-wrap;">Returns the variance of a list of numbers or of each column in a table
+</td></tr><tr><td><a href="/commands/docs/merge.html">merge</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Merge the input with a record or table, overwriting values in matching columns.
+</td></tr><tr><td><a href="/commands/docs/metadata.html">metadata</a></td><td style="white-space:pre-wrap;">debug
+</td><td style="white-space:pre-wrap;">Get the metadata for items in the stream
+</td></tr><tr><td><a href="/commands/docs/mkdir.html">mkdir</a></td><td style="white-space:pre-wrap;">filesystem
+</td><td style="white-space:pre-wrap;">Make directories, creates intermediary directories as required.
+</td></tr><tr><td><a href="/commands/docs/module.html">module</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Define a custom module
+</td></tr><tr><td><a href="/commands/docs/move.html">move</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Move columns before or after other columns
+</td></tr><tr><td><a href="/commands/docs/mut.html">mut</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Create a mutable variable and give it a value.
+</td></tr><tr><td><a href="/commands/docs/mv.html">mv</a></td><td style="white-space:pre-wrap;">filesystem
+</td><td style="white-space:pre-wrap;">Move files or directories.
+</td></tr><tr><td><a href="/commands/docs/n.html">n</a></td><td style="white-space:pre-wrap;">shells
+</td><td style="white-space:pre-wrap;">Switch to the next shell.
+</td></tr><tr><td><a href="/commands/docs/nu-check.html">nu-check</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Validate and parse input content
+</td></tr><tr><td><a href="/commands/docs/nu-highlight.html">nu-highlight</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Syntax highlight the input string.
+</td></tr><tr><td><a href="/commands/docs/open.html">open</a></td><td style="white-space:pre-wrap;">filesystem
+</td><td style="white-space:pre-wrap;">Load a file into a cell, converting to table if possible (avoid by appending &#39;--raw&#39;).
+</td></tr><tr><td><a href="/commands/docs/overlay.html">overlay</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Commands for manipulating overlays.
+</td></tr><tr><td><a href="/commands/docs/overlay_hide.html">overlay hide</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Hide an active overlay
+</td></tr><tr><td><a href="/commands/docs/overlay_list.html">overlay list</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">List all active overlays
+</td></tr><tr><td><a href="/commands/docs/overlay_new.html">overlay new</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Create an empty overlay
+</td></tr><tr><td><a href="/commands/docs/overlay_use.html">overlay use</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Use definitions from a module as an overlay
+</td></tr><tr><td><a href="/commands/docs/p.html">p</a></td><td style="white-space:pre-wrap;">shells
+</td><td style="white-space:pre-wrap;">Switch to the previous shell.
+</td></tr><tr><td><a href="/commands/docs/par-each.html">par-each</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Run a closure on each row of the input list in parallel, creating a new list with the results.
+</td></tr><tr><td><a href="/commands/docs/parse.html">parse</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Parse columns from string data using a simple pattern.
+</td></tr><tr><td><a href="/commands/docs/path.html">path</a></td><td style="white-space:pre-wrap;">default
+</td><td style="white-space:pre-wrap;">Explore and manipulate paths.
+</td></tr><tr><td><a href="/commands/docs/path_basename.html">path basename</a></td><td style="white-space:pre-wrap;">default
+</td><td style="white-space:pre-wrap;">Get the final component of a path
+</td></tr><tr><td><a href="/commands/docs/path_dirname.html">path dirname</a></td><td style="white-space:pre-wrap;">default
+</td><td style="white-space:pre-wrap;">Get the parent directory of a path
+</td></tr><tr><td><a href="/commands/docs/path_exists.html">path exists</a></td><td style="white-space:pre-wrap;">default
+</td><td style="white-space:pre-wrap;">Check whether a path exists
+</td></tr><tr><td><a href="/commands/docs/path_expand.html">path expand</a></td><td style="white-space:pre-wrap;">default
+</td><td style="white-space:pre-wrap;">Try to expand a path to its absolute form
+</td></tr><tr><td><a href="/commands/docs/path_join.html">path join</a></td><td style="white-space:pre-wrap;">default
+</td><td style="white-space:pre-wrap;">Join a structured path or a list of path parts.
+</td></tr><tr><td><a href="/commands/docs/path_parse.html">path parse</a></td><td style="white-space:pre-wrap;">default
+</td><td style="white-space:pre-wrap;">Convert a path into structured data.
+</td></tr><tr><td><a href="/commands/docs/path_relative-to.html">path relative-to</a></td><td style="white-space:pre-wrap;">default
+</td><td style="white-space:pre-wrap;">Express a path as relative to another path.
+</td></tr><tr><td><a href="/commands/docs/path_split.html">path split</a></td><td style="white-space:pre-wrap;">default
+</td><td style="white-space:pre-wrap;">Split a path into a list based on the system&#39;s path separator.
+</td></tr><tr><td><a href="/commands/docs/path_type.html">path type</a></td><td style="white-space:pre-wrap;">default
+</td><td style="white-space:pre-wrap;">Get the type of the object a path refers to (e.g., file, dir, symlink)
+</td></tr><tr><td><a href="/commands/docs/port.html">port</a></td><td style="white-space:pre-wrap;">network
+</td><td style="white-space:pre-wrap;">Get a free port from system
+</td></tr><tr><td><a href="/commands/docs/prepend.html">prepend</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Prepend any number of rows to a table.
+</td></tr><tr><td><a href="/commands/docs/print.html">print</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Print the given values to stdout
+</td></tr><tr><td><a href="/commands/docs/profile.html">profile</a></td><td style="white-space:pre-wrap;">debug
+</td><td style="white-space:pre-wrap;">Profile each pipeline element in a closure.
+</td></tr><tr><td><a href="/commands/docs/ps.html">ps</a></td><td style="white-space:pre-wrap;">system
+</td><td style="white-space:pre-wrap;">View information about system processes.
+</td></tr><tr><td><a href="/commands/docs/query.html">query</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Show all the query commands
+</td></tr><tr><td><a href="/commands/docs/query_db.html">query db</a></td><td style="white-space:pre-wrap;">database
+</td><td style="white-space:pre-wrap;">Query a database using SQL.
+</td></tr><tr><td><a href="/commands/docs/query_json.html">query json</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">execute json query on json file (open --raw &lt;file&gt; | query json &#39;query string&#39;)
+</td></tr><tr><td><a href="/commands/docs/query_web.html">query web</a></td><td style="white-space:pre-wrap;">network
+</td><td style="white-space:pre-wrap;">execute selector query on html/web
+</td></tr><tr><td><a href="/commands/docs/query_xml.html">query xml</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">execute xpath query on xml
+</td></tr><tr><td><a href="/commands/docs/random.html">random</a></td><td style="white-space:pre-wrap;">random
+</td><td style="white-space:pre-wrap;">Generate a random value.
+</td></tr><tr><td><a href="/commands/docs/random_bool.html">random bool</a></td><td style="white-space:pre-wrap;">random
+</td><td style="white-space:pre-wrap;">Generate a random boolean value
+</td></tr><tr><td><a href="/commands/docs/random_chars.html">random chars</a></td><td style="white-space:pre-wrap;">random
+</td><td style="white-space:pre-wrap;">Generate random chars
+</td></tr><tr><td><a href="/commands/docs/random_decimal.html">random decimal</a></td><td style="white-space:pre-wrap;">random
+</td><td style="white-space:pre-wrap;">Generate a random decimal within a range [min..max]
+</td></tr><tr><td><a href="/commands/docs/random_dice.html">random dice</a></td><td style="white-space:pre-wrap;">random
+</td><td style="white-space:pre-wrap;">Generate a random dice roll
+</td></tr><tr><td><a href="/commands/docs/random_integer.html">random integer</a></td><td style="white-space:pre-wrap;">random
+</td><td style="white-space:pre-wrap;">Generate a random integer [min..max]
+</td></tr><tr><td><a href="/commands/docs/random_uuid.html">random uuid</a></td><td style="white-space:pre-wrap;">random
+</td><td style="white-space:pre-wrap;">Generate a random uuid4 string
+</td></tr><tr><td><a href="/commands/docs/range.html">range</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Return only the selected rows.
+</td></tr><tr><td><a href="/commands/docs/reduce.html">reduce</a></td><td style="white-space:pre-wrap;">default
+</td><td style="white-space:pre-wrap;">Aggregate a list to a single value using an accumulator closure.
+</td></tr><tr><td><a href="/commands/docs/register.html">register</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Register a plugin
+</td></tr><tr><td><a href="/commands/docs/registry_query.html">registry query</a></td><td style="white-space:pre-wrap;">system
+</td><td style="white-space:pre-wrap;">Query the Windows registry.
+</td></tr><tr><td><a href="/commands/docs/reject.html">reject</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Remove the given columns from the table. To remove rows, use &#39;drop&#39;.
+</td></tr><tr><td><a href="/commands/docs/rename.html">rename</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Creates a new table with columns renamed.
+</td></tr><tr><td><a href="/commands/docs/return.html">return</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Return early from a function
+</td></tr><tr><td><a href="/commands/docs/reverse.html">reverse</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Reverses the input list or table.
+</td></tr><tr><td><a href="/commands/docs/rm.html">rm</a></td><td style="white-space:pre-wrap;">filesystem
+</td><td style="white-space:pre-wrap;">Remove files and directories.
+</td></tr><tr><td><a href="/commands/docs/roll.html">roll</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Rolling commands for tables
+</td></tr><tr><td><a href="/commands/docs/roll_down.html">roll down</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Roll table rows down
+</td></tr><tr><td><a href="/commands/docs/roll_left.html">roll left</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Roll record or table columns left
+</td></tr><tr><td><a href="/commands/docs/roll_right.html">roll right</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Roll table columns right
+</td></tr><tr><td><a href="/commands/docs/roll_up.html">roll up</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Roll table rows up
+</td></tr><tr><td><a href="/commands/docs/rotate.html">rotate</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Rotates a table or record clockwise (default) or counter-clockwise (use --ccw flag).
+</td></tr><tr><td><a href="/commands/docs/run-external.html">run-external</a></td><td style="white-space:pre-wrap;">system
+</td><td style="white-space:pre-wrap;">Runs external command
+</td></tr><tr><td><a href="/commands/docs/save.html">save</a></td><td style="white-space:pre-wrap;">filesystem
+</td><td style="white-space:pre-wrap;">Save a file.
+</td></tr><tr><td><a href="/commands/docs/schema.html">schema</a></td><td style="white-space:pre-wrap;">database
+</td><td style="white-space:pre-wrap;">Show the schema of a SQLite database.
+</td></tr><tr><td><a href="/commands/docs/select.html">select</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Down-select table to only these columns.
+</td></tr><tr><td><a href="/commands/docs/seq.html">seq</a></td><td style="white-space:pre-wrap;">generators
+</td><td style="white-space:pre-wrap;">Output sequences of numbers.
+</td></tr><tr><td><a href="/commands/docs/seq_char.html">seq char</a></td><td style="white-space:pre-wrap;">generators
+</td><td style="white-space:pre-wrap;">Print a sequence of ASCII characters
+</td></tr><tr><td><a href="/commands/docs/seq_date.html">seq date</a></td><td style="white-space:pre-wrap;">generators
+</td><td style="white-space:pre-wrap;">Print sequences of dates
+</td></tr><tr><td><a href="/commands/docs/shells.html">shells</a></td><td style="white-space:pre-wrap;">shells
+</td><td style="white-space:pre-wrap;">Lists all open shells.
+</td></tr><tr><td><a href="/commands/docs/shuffle.html">shuffle</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Shuffle rows randomly.
+</td></tr><tr><td><a href="/commands/docs/size.html">size</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Gather word count statistics on the text.
+</td></tr><tr><td><a href="/commands/docs/skip.html">skip</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Skip the first several rows of the input. Counterpart of &#39;drop&#39;. Opposite of &#39;first&#39;.
+</td></tr><tr><td><a href="/commands/docs/skip_until.html">skip until</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Skip elements of the input until a predicate is true.
+</td></tr><tr><td><a href="/commands/docs/skip_while.html">skip while</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Skip elements of the input while a predicate is true.
+</td></tr><tr><td><a href="/commands/docs/sleep.html">sleep</a></td><td style="white-space:pre-wrap;">platform
+</td><td style="white-space:pre-wrap;">Delay for a specified amount of time.
+</td></tr><tr><td><a href="/commands/docs/sort.html">sort</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Sort in increasing order.
+</td></tr><tr><td><a href="/commands/docs/sort-by.html">sort-by</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Sort by the given columns, in increasing order.
+</td></tr><tr><td><a href="/commands/docs/source.html">source</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Runs a script file in the current context.
+</td></tr><tr><td><a href="/commands/docs/source-env.html">source-env</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Source the environment from a source file into the current environment.
+</td></tr><tr><td><a href="/commands/docs/split.html">split</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Split contents across desired subcommand (like row, column) via the separator.
+</td></tr><tr><td><a href="/commands/docs/split_chars.html">split chars</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Split a string into a list of characters
+</td></tr><tr><td><a href="/commands/docs/split_column.html">split column</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Split a string into multiple columns using a separator
+</td></tr><tr><td><a href="/commands/docs/split_list.html">split list</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Split a list into multiple lists using a separator
+</td></tr><tr><td><a href="/commands/docs/split_row.html">split row</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Split a string into multiple rows using a separator
+</td></tr><tr><td><a href="/commands/docs/split_words.html">split words</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Split a string&#39;s words into separate rows
+</td></tr><tr><td><a href="/commands/docs/split-by.html">split-by</a></td><td style="white-space:pre-wrap;">default
+</td><td style="white-space:pre-wrap;">Create a new table split.
+</td></tr><tr><td><a href="/commands/docs/start.html">start</a></td><td style="white-space:pre-wrap;">filesystem
+</td><td style="white-space:pre-wrap;">Open a folder,file or website in the default application or viewer.
+</td></tr><tr><td><a href="/commands/docs/str.html">str</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Various commands for working with string data
+</td></tr><tr><td><a href="/commands/docs/str_camel-case.html">str camel-case</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Convert a string to camelCase
+</td></tr><tr><td><a href="/commands/docs/str_capitalize.html">str capitalize</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Capitalize first letter of text
+</td></tr><tr><td><a href="/commands/docs/str_collect.html">str collect</a></td><td style="white-space:pre-wrap;">deprecated
+</td><td style="white-space:pre-wrap;">Deprecated command
+</td></tr><tr><td><a href="/commands/docs/str_contains.html">str contains</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Checks if string input contains a substring
+</td></tr><tr><td><a href="/commands/docs/str_distance.html">str distance</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Compare two strings and return the edit distance/Levenshtein distance
+</td></tr><tr><td><a href="/commands/docs/str_downcase.html">str downcase</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Make text lowercase
+</td></tr><tr><td><a href="/commands/docs/str_ends-with.html">str ends-with</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Check if an input ends with a string
+</td></tr><tr><td><a href="/commands/docs/str_find-replace.html">str find-replace</a></td><td style="white-space:pre-wrap;">deprecated
+</td><td style="white-space:pre-wrap;">Deprecated command
+</td></tr><tr><td><a href="/commands/docs/str_index-of.html">str index-of</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Returns start index of first occurrence of string in input, or -1 if no match
+</td></tr><tr><td><a href="/commands/docs/str_join.html">str join</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Concatenate multiple strings into a single string, with an optional separator between each
+</td></tr><tr><td><a href="/commands/docs/str_kebab-case.html">str kebab-case</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Convert a string to kebab-case
+</td></tr><tr><td><a href="/commands/docs/str_length.html">str length</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Output the length of any strings in the pipeline
+</td></tr><tr><td><a href="/commands/docs/str_lpad.html">str lpad</a></td><td style="white-space:pre-wrap;">deprecated
+</td><td style="white-space:pre-wrap;">Deprecated command
+</td></tr><tr><td><a href="/commands/docs/str_pascal-case.html">str pascal-case</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Convert a string to PascalCase
+</td></tr><tr><td><a href="/commands/docs/str_replace.html">str replace</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Find and replace text
+</td></tr><tr><td><a href="/commands/docs/str_reverse.html">str reverse</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Reverse every string in the pipeline
+</td></tr><tr><td><a href="/commands/docs/str_rpad.html">str rpad</a></td><td style="white-space:pre-wrap;">deprecated
+</td><td style="white-space:pre-wrap;">Deprecated command
+</td></tr><tr><td><a href="/commands/docs/str_screaming-snake-case.html">str screaming-snake-case</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Convert a string to SCREAMING_SNAKE_CASE
+</td></tr><tr><td><a href="/commands/docs/str_snake-case.html">str snake-case</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Convert a string to snake_case
+</td></tr><tr><td><a href="/commands/docs/str_starts-with.html">str starts-with</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Check if an input starts with a string
+</td></tr><tr><td><a href="/commands/docs/str_substring.html">str substring</a></td><td style="white-space:pre-wrap;">default
+</td><td style="white-space:pre-wrap;">Get part of a string. Note that the start is included but the end is excluded, and that the first character of a string is index 0.
+</td></tr><tr><td><a href="/commands/docs/str_title-case.html">str title-case</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Convert a string to Title Case
+</td></tr><tr><td><a href="/commands/docs/str_to-datetime.html">str to-datetime</a></td><td style="white-space:pre-wrap;">deprecated
+</td><td style="white-space:pre-wrap;">Deprecated command
+</td></tr><tr><td><a href="/commands/docs/str_to-decimal.html">str to-decimal</a></td><td style="white-space:pre-wrap;">deprecated
+</td><td style="white-space:pre-wrap;">Deprecated command
+</td></tr><tr><td><a href="/commands/docs/str_to-int.html">str to-int</a></td><td style="white-space:pre-wrap;">deprecated
+</td><td style="white-space:pre-wrap;">Deprecated command
+</td></tr><tr><td><a href="/commands/docs/str_trim.html">str trim</a></td><td style="white-space:pre-wrap;">default
+</td><td style="white-space:pre-wrap;">Trim whitespace or specific character
+</td></tr><tr><td><a href="/commands/docs/str_upcase.html">str upcase</a></td><td style="white-space:pre-wrap;">default
+</td><td style="white-space:pre-wrap;">Make text uppercase
+</td></tr><tr><td><a href="/commands/docs/sys.html">sys</a></td><td style="white-space:pre-wrap;">system
+</td><td style="white-space:pre-wrap;">View information about the system.
+</td></tr><tr><td><a href="/commands/docs/table.html">table</a></td><td style="white-space:pre-wrap;">viewers
+</td><td style="white-space:pre-wrap;">Render the table.
+</td></tr><tr><td><a href="/commands/docs/take.html">take</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Take only the first n elements of a list, or the first n bytes of a binary value.
+</td></tr><tr><td><a href="/commands/docs/take_until.html">take until</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Take elements of the input until a predicate is true.
+</td></tr><tr><td><a href="/commands/docs/take_while.html">take while</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Take elements of the input while a predicate is true.
+</td></tr><tr><td><a href="/commands/docs/term_size.html">term size</a></td><td style="white-space:pre-wrap;">platform
+</td><td style="white-space:pre-wrap;">Returns a record containing the number of columns (width) and rows (height) of the terminal
+</td></tr><tr><td><a href="/commands/docs/timeit.html">timeit</a></td><td style="white-space:pre-wrap;">debug
+</td><td style="white-space:pre-wrap;">Time the running time of a closure
+</td></tr><tr><td><a href="/commands/docs/to.html">to</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Translate structured data to a format
+</td></tr><tr><td><a href="/commands/docs/to_csv.html">to csv</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Convert table into .csv text 
+</td></tr><tr><td><a href="/commands/docs/to_html.html">to html</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Convert table into simple HTML
+</td></tr><tr><td><a href="/commands/docs/to_json.html">to json</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Converts table data into JSON text.
+</td></tr><tr><td><a href="/commands/docs/to_md.html">to md</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Convert table into simple Markdown
+</td></tr><tr><td><a href="/commands/docs/to_nuon.html">to nuon</a></td><td style="white-space:pre-wrap;">experimental
+</td><td style="white-space:pre-wrap;">Converts table data into Nuon (Nushell Object Notation) text.
+</td></tr><tr><td><a href="/commands/docs/to_text.html">to text</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Converts data into simple text.
+</td></tr><tr><td><a href="/commands/docs/to_toml.html">to toml</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Convert record into .toml text
+</td></tr><tr><td><a href="/commands/docs/to_tsv.html">to tsv</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Convert table into .tsv text
+</td></tr><tr><td><a href="/commands/docs/to_xml.html">to xml</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Convert table into .xml text
+</td></tr><tr><td><a href="/commands/docs/to_yaml.html">to yaml</a></td><td style="white-space:pre-wrap;">formats
+</td><td style="white-space:pre-wrap;">Convert table into .yaml/.yml text
+</td></tr><tr><td><a href="/commands/docs/touch.html">touch</a></td><td style="white-space:pre-wrap;">filesystem
+</td><td style="white-space:pre-wrap;">Creates one or more files.
+</td></tr><tr><td><a href="/commands/docs/transpose.html">transpose</a></td><td style="white-space:pre-wrap;">default
+</td><td style="white-space:pre-wrap;">Transposes the table contents so rows become columns and columns become rows.
+</td></tr><tr><td><a href="/commands/docs/try.html">try</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Try to run a block, if it fails optionally run a catch block
+</td></tr><tr><td><a href="/commands/docs/tutor.html">tutor</a></td><td style="white-space:pre-wrap;">misc
+</td><td style="white-space:pre-wrap;">Run the tutorial. To begin, run: tutor
+</td></tr><tr><td><a href="/commands/docs/uniq.html">uniq</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Return the distinct values in the input.
+</td></tr><tr><td><a href="/commands/docs/uniq-by.html">uniq-by</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Return the distinct values in the input by the given column(s).
+</td></tr><tr><td><a href="/commands/docs/update.html">update</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Update an existing column to have a new value.
+</td></tr><tr><td><a href="/commands/docs/update_cells.html">update cells</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Update the table cells.
+</td></tr><tr><td><a href="/commands/docs/upsert.html">upsert</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Update an existing column to have a new value, or insert a new column.
+</td></tr><tr><td><a href="/commands/docs/url.html">url</a></td><td style="white-space:pre-wrap;">network
+</td><td style="white-space:pre-wrap;">Various commands for working with URLs
+</td></tr><tr><td><a href="/commands/docs/url_build-query.html">url build-query</a></td><td style="white-space:pre-wrap;">network
+</td><td style="white-space:pre-wrap;">Converts record or table into query string applying percent-encoding.
+</td></tr><tr><td><a href="/commands/docs/url_encode.html">url encode</a></td><td style="white-space:pre-wrap;">strings
+</td><td style="white-space:pre-wrap;">Converts a string to a percent encoded web safe string
+</td></tr><tr><td><a href="/commands/docs/url_join.html">url join</a></td><td style="white-space:pre-wrap;">network
+</td><td style="white-space:pre-wrap;">Converts a record to url
+</td></tr><tr><td><a href="/commands/docs/url_parse.html">url parse</a></td><td style="white-space:pre-wrap;">network
+</td><td style="white-space:pre-wrap;">Parses a url
+</td></tr><tr><td><a href="/commands/docs/use.html">use</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Use definitions from a module
+</td></tr><tr><td><a href="/commands/docs/values.html">values</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Given a record or table, produce a list of its columns&#39; values.
+</td></tr><tr><td><a href="/commands/docs/version.html">version</a></td><td style="white-space:pre-wrap;">default
+</td><td style="white-space:pre-wrap;">Display Nu version.
+</td></tr><tr><td><a href="/commands/docs/view.html">view</a></td><td style="white-space:pre-wrap;">debug
+</td><td style="white-space:pre-wrap;">Various commands for viewing debug information
+</td></tr><tr><td><a href="/commands/docs/view_files.html">view files</a></td><td style="white-space:pre-wrap;">debug
+</td><td style="white-space:pre-wrap;">View the files registered in nushell&#39;s EngineState memory
+</td></tr><tr><td><a href="/commands/docs/view_source.html">view source</a></td><td style="white-space:pre-wrap;">debug
+</td><td style="white-space:pre-wrap;">View a block, module, or a definition
+</td></tr><tr><td><a href="/commands/docs/view_span.html">view span</a></td><td style="white-space:pre-wrap;">debug
+</td><td style="white-space:pre-wrap;">View the contents of a span
+</td></tr><tr><td><a href="/commands/docs/watch.html">watch</a></td><td style="white-space:pre-wrap;">filesystem
+</td><td style="white-space:pre-wrap;">Watch for file changes and execute Nu code when they happen.
+</td></tr><tr><td><a href="/commands/docs/where.html">where</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Filter values based on a row condition.
+</td></tr><tr><td><a href="/commands/docs/which.html">which</a></td><td style="white-space:pre-wrap;">system
+</td><td style="white-space:pre-wrap;">Finds a program file, alias or custom command.
+</td></tr><tr><td><a href="/commands/docs/while.html">while</a></td><td style="white-space:pre-wrap;">core
+</td><td style="white-space:pre-wrap;">Conditionally run a block in a loop.
+</td></tr><tr><td><a href="/commands/docs/window.html">window</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Creates a sliding window of `window_size` that slide by n rows/elements across input.
+</td></tr><tr><td><a href="/commands/docs/with-env.html">with-env</a></td><td style="white-space:pre-wrap;">env
+</td><td style="white-space:pre-wrap;">Runs a block with an environment variable set.
+</td></tr><tr><td><a href="/commands/docs/wrap.html">wrap</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Wrap the value into a column.
+</td></tr><tr><td><a href="/commands/docs/zip.html">zip</a></td><td style="white-space:pre-wrap;">filters
+</td><td style="white-space:pre-wrap;">Combine a stream with the input
+</td></tr><!--]--></table></div><!--[--><!--]--></div><footer class="page-meta"><div class="meta-item edit-link"><a class="external-link meta-item-label" href="https://github.com/nushell/nushell.github.io/edit/main/commands/README.md" rel="noopener noreferrer" target="_blank" aria-label="Edit this page on GitHub"><!--[--><!--]--> Edit this page on GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!----><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: 30049909+Hofer-Julian@users.noreply.github.com">Hofer-Julian</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: aoutadi@infoblox.com">Arash Outadi</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: ibrah1440@gmail.com">Ibraheem</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: 26268125+rgwood@users.noreply.github.com">Reilly Wood</span><!--[-->, <!--]--><!--]--><!--[--><span class="contributor" title="email: git.sebastian@gmx.de">Sebastian Jung</span><!----><!--]--><!--]--></span></div></footer><!----><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/assets/app-c9a81c0f.js" defer></script>
+  </body>
+</html>

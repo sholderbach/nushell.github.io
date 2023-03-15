@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-0dc4e734","path":"/pt-BR/book/escapando.html","title":"Escapando para o sistema","lang":"pt-BR","frontmatter":{},"headers":[],"filePathRelative":"pt-BR/book/escapando.md","git":{"createdTime":1605383573000,"updatedTime":1605383573000,"contributors":[{"name":"Ibraheem Ahmed","email":"ibrah1440@gmail.com","commits":1}]}}');export{a as data};
